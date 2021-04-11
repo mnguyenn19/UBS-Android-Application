@@ -9,7 +9,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Variables
+    ///Variables
 
     //Firebase Database
     FirebaseDatabase rootNode;

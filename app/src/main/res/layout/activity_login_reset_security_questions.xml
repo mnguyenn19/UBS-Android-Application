@@ -2,23 +2,24 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
 
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
     android:orientation="vertical"
-    tools:context=".LoginForgotPassword"
-    >
+    tools:context=".LoginResetSecurityQuestions">
 
     <TextView
-        android:id="@+id/loginSQTitle"
+        android:id="@+id/loginResetSQTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:text="Security Questions"
+        android:text="Reset Security Questions"
         android:textSize="17sp"
         android:textStyle="bold"
 
@@ -31,15 +32,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/loginSQ1"
+
+    <Spinner
+        android:id="@+id/loginSQ1_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:text="Security Question 1?"
-
-        android:textStyle="bold"
-
 
         android:layout_marginStart="35dp"
         android:layout_marginTop="100dp"
@@ -47,7 +44,11 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        />
+
 
 
     <EditText
@@ -66,15 +67,10 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-
-    <TextView
-        android:id="@+id/loginSQ2"
+    <Spinner
+        android:id="@+id/loginSQ2_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:text="Security Question 2?"
-
-        android:textStyle="bold"
 
         android:layout_marginStart="35dp"
         android:layout_marginTop="200dp"
@@ -82,10 +78,13 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        />
 
     <EditText
-        android:id="@+id/loginSQ2Answer"
+        android:id="@+id/loginSQ2ResetAnswer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
@@ -100,14 +99,10 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <TextView
-        android:id="@+id/loginSQ3"
+    <Spinner
+        android:id="@+id/loginSQ3_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:text="Security Question 3?"
-
-        android:textStyle="bold"
 
         android:layout_marginStart="35dp"
         android:layout_marginTop="300dp"
@@ -115,10 +110,13 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        />
 
     <EditText
-        android:id="@+id/loginSQ3Answer"
+        android:id="@+id/loginSQ3ResetAnswer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
@@ -133,39 +131,6 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <TextView
-        android:id="@+id/loginEmailTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text="Email"
-        android:textSize="17sp"
-        android:textStyle="bold"
-
-
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="30dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <EditText
-        android:id="@+id/loginEnterEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-
-        android:hint="Enter Email Asscociated with User ID"
-
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="430dp"
-        android:layout_marginEnd="30dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
 
     <Button
         android:id="@+id/loginResetButton"
@@ -178,11 +143,10 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="130dp"
+        android:layout_marginBottom="200dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

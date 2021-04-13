@@ -30,7 +30,7 @@ public class Search extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        firebaseReference = FirebaseDatabase.getInstance().getReference().child("Database"); //30:00 firebaseReference = FirebaseDatabase.getInstance().getReference().child("Database").child("nameOfInnerBranchOnStruct");
+        firebaseReference = FirebaseDatabase.getInstance().getReference().child("ubs-android-application-t11-default-rtdb").child("User").child("Exchange"); //30:00 firebaseReference = FirebaseDatabase.getInstance().getReference().child("Database").child("nameOfInnerBranchOnStruct");
         recyclerView = findViewById(R.id.searchRecyclerView);
         searchView = findViewById(R.id.searchPage);
     }

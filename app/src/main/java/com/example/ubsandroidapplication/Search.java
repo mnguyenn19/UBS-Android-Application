@@ -5,8 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,7 +38,30 @@ public class Search extends AppCompatActivity
         firebaseReference = FirebaseDatabase.getInstance().getReference().child("ubs-android-application-t11-default-rtdb").child("User").child("Exchange"); //30:00 firebaseReference = FirebaseDatabase.getInstance().getReference().child("Database").child("nameOfInnerBranchOnStruct");
         recyclerView = findViewById(R.id.searchRecyclerView);
         searchView = findViewById(R.id.searchPage);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ImageView backArrow = findViewById(R.id.backArrow);
+        ImageView settingsIcon = findViewById(R.id.settingsIcon);
+        TextView appName = findViewById(R.id.appName);
+
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Search.this, "Going back", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        settingsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Search.this, "Menu Options", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        appName.setText("UBS Application");
     }
+
     @Override
     protected void onStart()
     {

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,14 +7,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Search">
+    android:background="@color/white"
+    tools:context="Search">
+
+    <include
+        layout="@layout/search_toolbar"/>
+
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchPage"
-        android:layout_width="match_parent"
+        android:layout_width="401dp"
         android:layout_height="?attr/actionBarSize"
+        android:layout_margin="5dp"
+        android:background="@color/material_on_background_emphasis_medium"
         android:padding="10dp"
-        app:queryHint="Search"
-        android:layout_margin="5dp"/>
+        app:queryHint="Search" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchRecyclerView"

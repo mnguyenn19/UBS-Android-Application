@@ -4,55 +4,118 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".LoginPage">
 
     <TextView
+        android:id="@+id/loginUBSTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:text="University Bazzar System"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:textAlignment="center"
-        tools:layout_editor_absoluteY="106dp" />
+
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
+        android:id="@+id/loginUserIDTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="UserID"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="235dp" />
+        android:textStyle="bold"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="235dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 
     <EditText
-        android:layout_width="300dp"
+        android:id="@+id/loginUsername"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="260dp"
+
         android:hint="Username"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
+        android:id="@+id/loginPassTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="Password"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="340dp"
+        android:textStyle="bold"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="340dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <EditText
-        android:layout_width="300dp"
+        android:id="@+id/loginPassword"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="365dp"
-        android:hint="Password"/>
+
+        android:hint="Password"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="365dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <Button
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="450dp" />
 
+        android:text="Login"
+
+        android:layout_gravity="start"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="210dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/loginForgotPasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+
+        android:layout_gravity="start"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="16dp"
+
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

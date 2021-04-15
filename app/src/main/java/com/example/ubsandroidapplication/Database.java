@@ -2,14 +2,16 @@ package com.example.ubsandroidapplication;
 
 public class Database {
     //Clubs
-    private String clubFirstName;   // must check this with regFirstName
-    private String clubLastName;    // must check this with regLastName
+    private String clubUsername;
+    private String clubFirstName;
+    private String clubLastName;
     private String clubName;
     private String clubDescription;
     private String clubUniversity;
 
     //Communication ////////////////////////// is there another way to set up messages instead of through the database?
     private String recipient;
+    private String commUsername;    // must check this with username to know who to block
 
     //Exchange
     private String excUsername; // must check this with username
@@ -28,8 +30,9 @@ public class Database {
     private String resetSA3;
 
     //Payment
-    private String payFirstName; // must check this with regFirstName
-    private String payLastName;  // must check this with regLastName
+    private String payUsername; // must check this with username
+    private String payFirstName;
+    private String payLastName;
     private String cardNum;
     private String expDate;
     private String cvvNum;
@@ -68,13 +71,15 @@ public class Database {
     }
 
     //Constructor
-    public Database(String clubFirstName, String clubLastName, String clubName, String clubDescription, String clubUniversity, String recipient, String excUsername, String excTitle, String excAnnouncementBox, String excUniversity, String logUsername, String logPassword, String resetSQ1, String resetSQ2, String resetSQ3, String resetSA1, String resetSA2, String resetSA3, String payFirstName, String payLastName, String cardNum, String expDate, String cvvNum, String streetAddress, String city, String state, String country, int zipCode, String regFirstName, String regLastName, String university, String email, String username, String password, String sq1, String sq2, String sq3, String sa1, String sa2, String sa3, String salesUsername, String itemName, String itemDescription, String itemCategory, double itemPrice, String keyword) {
+    public Database(String clubUsername, String clubFirstName, String clubLastName, String clubName, String clubDescription, String clubUniversity, String recipient, String commUsername, String excUsername, String excTitle, String excAnnouncementBox, String excUniversity, String logUsername, String logPassword, String resetSQ1, String resetSQ2, String resetSQ3, String resetSA1, String resetSA2, String resetSA3, String payUsername, String payFirstName, String payLastName, String cardNum, String expDate, String cvvNum, String streetAddress, String city, String state, String country, int zipCode, String regFirstName, String regLastName, String university, String email, String username, String password, String sq1, String sq2, String sq3, String sa1, String sa2, String sa3, String salesUsername, String itemName, String itemDescription, String itemCategory, double itemPrice, String keyword) {
+        this.clubUsername = clubUsername;
         this.clubFirstName = clubFirstName;
         this.clubLastName = clubLastName;
         this.clubName = clubName;
         this.clubDescription = clubDescription;
         this.clubUniversity = clubUniversity;
         this.recipient = recipient;
+        this.commUsername = commUsername;
         this.excUsername = excUsername;
         this.excTitle = excTitle;
         this.excAnnouncementBox = excAnnouncementBox;
@@ -87,6 +92,7 @@ public class Database {
         this.resetSA1 = resetSA1;
         this.resetSA2 = resetSA2;
         this.resetSA3 = resetSA3;
+        this.payUsername = payUsername;
         this.payFirstName = payFirstName;
         this.payLastName = payLastName;
         this.cardNum = cardNum;
@@ -118,6 +124,14 @@ public class Database {
     }
 
     //Clubs
+    public String getClubUsername() {
+        return clubUsername;
+    }
+
+    public void setClubUsername(String clubUsername) {
+        this.clubUsername = clubUsername;
+    }
+
     public String getClubFirstName() {
         return clubFirstName;
     }
@@ -165,6 +179,14 @@ public class Database {
 
     public void setRecipient(String recipient) {
         this.recipient = recipient;
+    }
+
+    public String getCommUsername() {
+        return commUsername;
+    }
+
+    public void setCommUsername(String commUsername) {
+        this.commUsername = commUsername;
     }
 
     //Exchange
@@ -266,6 +288,14 @@ public class Database {
     }
 
     //Payment
+    public String getPayUsername() {
+        return payUsername;
+    }
+
+    public void setPayUsername(String payUsername) {
+        this.payUsername = payUsername;
+    }
+
     public String getPayFirstName() {
         return payFirstName;
     }
@@ -442,6 +472,7 @@ public class Database {
     public void setSa3(String sa3) {
         this.sa3 = sa3;
     }
+
     //Sales
     public String getSalesUsername() {
         return salesUsername;

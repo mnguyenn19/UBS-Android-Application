@@ -1,4 +1,4 @@
-package com.example.ubsandroidapplication;
+/*package com.example.ubsandroidapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,10 +16,10 @@ public class homepage extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
 
         Toolbar hp_toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(hp_toolbar);
+        setActionBar(hp_toolbar);
     }
 
-    @Override
+    //@Override
     public boolean onCreateOptionsMenu(homepage menu) {
         getMenuInflater().inflate(R.menu.homepage_tb_menu,menu);
         return true;
@@ -52,4 +52,4 @@ public class homepage extends AppCompatActivity {
         return true;
 
     }
-}
+}*/

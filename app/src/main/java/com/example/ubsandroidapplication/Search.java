@@ -40,7 +40,7 @@ public class Search extends AppCompatActivity
         searchView = findViewById(R.id.searchPage);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setActionBar(toolbar);
         ImageView backArrow = findViewById(R.id.backArrow);
         ImageView settingsIcon = findViewById(R.id.settingsIcon);
         TextView appName = findViewById(R.id.appName);

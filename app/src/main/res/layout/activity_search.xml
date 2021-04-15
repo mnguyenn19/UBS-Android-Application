@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="Search">
+    tools:context=".Search">
 
     <include
         layout="@layout/search_toolbar"/>

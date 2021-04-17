@@ -13,10 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UBSAndroidApplication">
+        <activity android:name=".RegistrationSetSecurityQuestions"></activity>
+        <activity android:name=".RegistrationPage" />
         <activity
             android:name=".Exchange"
             android:label="@string/title_activity_exchange"
-            android:theme="@style/Theme.UBSAndroidApplication.NoActionBar"></activity>
+            android:theme="@style/Theme.UBSAndroidApplication.NoActionBar" />
         <activity android:name=".LoginResetSecurityQuestions" />
         <activity android:name=".LoginResetPassword" />
         <activity android:name=".homepage" />

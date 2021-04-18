@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UBSAndroidApplication">
-        <activity android:name=".RegistrationSetSecurityQuestions"></activity>
+        <activity android:name=".LoginPage"></activity>
+        <activity android:name=".LoginForgotPassword" />
+        <activity android:name=".RegistrationSetSecurityQuestions" />
         <activity android:name=".RegistrationPage" />
         <activity
             android:name=".Exchange"
@@ -35,24 +37,6 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
         -->
-        <activity
-            android:name=".LoginForgotPassword"
-            android:label="@string/title_activity_login_forgot_password">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".LoginPage"
-            android:label="@string/title_activity_login_page">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

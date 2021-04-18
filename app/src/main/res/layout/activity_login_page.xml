@@ -12,7 +12,7 @@
     tools:context=".LoginPage">
 
     <TextView
-        android:id="@+id/loginUBSTitle"
+        android:id="@+id/LoginUBSTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/loginUserIDTitle"
+        android:id="@+id/LoginUserIDTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -42,7 +42,7 @@
 
 
     <EditText
-        android:id="@+id/loginUsername"
+        android:id="@+id/LoginUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
@@ -57,7 +57,7 @@
         />
 
     <TextView
-        android:id="@+id/loginPassTitle"
+        android:id="@+id/LoginPassTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -71,7 +71,7 @@
         />
 
     <EditText
-        android:id="@+id/loginPassword"
+        android:id="@+id/LoginPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
@@ -86,7 +86,7 @@
 
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/LoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -104,7 +104,7 @@
 
 
     <Button
-        android:id="@+id/loginForgotPasswordButton"
+        android:id="@+id/LoginForgotPasswordButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot Password?"

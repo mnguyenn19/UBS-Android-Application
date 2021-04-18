@@ -12,4 +12,5 @@ public class LoginResetSecurityQuestions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_reset_security_questions);
     }
+
 }

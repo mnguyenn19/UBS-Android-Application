@@ -140,7 +140,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
-        android:hint="At least 8 characters long, alphanumeric & no wild characters."
+        android:hint="At least 8 characters long, alphanumeric and no wild characters."
 
         android:layout_marginStart="30dp"
         android:layout_marginTop="345dp"

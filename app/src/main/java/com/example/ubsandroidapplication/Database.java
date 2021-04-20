@@ -1,8 +1,8 @@
 package com.example.ubsandroidapplication;
 
 public class Database {
-    //Clubs
-    private String clubUsername;
+    //Clubs // initialize??
+    private String clubUsername;    //
     private String clubFirstName;
     private String clubLastName;
     private String clubName;

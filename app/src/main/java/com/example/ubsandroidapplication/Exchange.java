@@ -8,15 +8,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.PersistableBundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class Exchange extends AppCompatActivity implements View.OnClickListener{
+/*public class Exchange extends AppCompatActivity implements View.OnClickListener{
 
     ColorStateList attribute;
     TextView home;
@@ -37,7 +39,6 @@ public class Exchange extends AppCompatActivity implements View.OnClickListener{
         createpost.setOnClickListener(this);
         edit.setOnClickListener(this);
         choice = findViewById(R.id.choice);
-
         attribute = createpost.getTextColors();
     }
 
@@ -83,4 +84,5 @@ public class Exchange extends AppCompatActivity implements View.OnClickListener{
             choice.animate().x(size).setDuration(100);
         }
     }
-}
+
+}*/

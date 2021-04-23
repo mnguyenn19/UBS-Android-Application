@@ -42,7 +42,7 @@
 
         app:layout_constraintBottom_toTopOf="@id/loginSQ1Answer"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="30dp"
+
 
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginResetSQTitle"
@@ -61,7 +61,7 @@
 
         app:layout_constraintBottom_toTopOf="@id/loginSQ2_spinner"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="30dp"
+
         android:layout_marginBottom="50dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginSQ1_spinner"
@@ -76,7 +76,6 @@
 
         app:layout_constraintBottom_toTopOf="@id/loginSQ2ResetAnswer"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="30dp"
 
 
 
@@ -97,7 +96,7 @@
 
         app:layout_constraintBottom_toTopOf="@id/loginSQ3_spinner"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="30dp"
+
 
 
         android:layout_marginBottom="50dp"
@@ -117,7 +116,7 @@
 
         app:layout_constraintBottom_toTopOf="@id/loginSQ3ResetAnswer"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="30dp"
+
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginSQ2ResetAnswer"
 
@@ -133,7 +132,6 @@
 
         app:layout_constraintBottom_toTopOf="@id/loginResetButton"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="30dp"
 
 
 

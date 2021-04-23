@@ -6,14 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:exported="true"
-
-
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
     android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+
     tools:context=".LoginResetSecurityQuestions">
 
     <TextView
@@ -24,15 +20,15 @@
         android:text="Reset Security Questions"
         android:textSize="17sp"
         android:textStyle="bold"
+        android:layout_marginTop="150dp"
 
+        app:layout_constraintBottom_toTopOf="@id/loginSQ1_spinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
 
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="30dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintVertical_chainStyle="packed"
+        />
 
 
     <Spinner
@@ -40,13 +36,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="30dp"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+
+        app:layout_constraintBottom_toTopOf="@id/loginSQ1Answer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="30dp"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginResetSQTitle"
 
 
         />
@@ -60,13 +59,14 @@
 
         android:hint="Answer to Security Question 1"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toTopOf="@id/loginSQ2_spinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginSQ1_spinner"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
         />
 
     <Spinner
@@ -74,13 +74,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toTopOf="@id/loginSQ2ResetAnswer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="30dp"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
+
+        android:layout_marginBottom="20dp"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginSQ1Answer"
 
 
         />
@@ -92,13 +95,15 @@
 
         android:hint="Answer to Security Question 2"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="230dp"
-        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toTopOf="@id/loginSQ3_spinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="30dp"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
+        android:layout_marginBottom="50dp"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginSQ2_spinner"
         />
 
     <Spinner
@@ -106,13 +111,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="30dp"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
+        android:layout_marginBottom="20dp"
+
+        app:layout_constraintBottom_toTopOf="@id/loginSQ3ResetAnswer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginSQ2ResetAnswer"
 
 
         />
@@ -124,13 +131,14 @@
 
         android:hint="Answer to Security Question 3"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="330dp"
-        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toTopOf="@id/loginResetButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="30dp"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginSQ3_spinner"
         />
 
 
@@ -141,14 +149,14 @@
 
         android:text="Reset"
 
-        android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="200dp"
-
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="170dp"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginSQ3ResetAnswer"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

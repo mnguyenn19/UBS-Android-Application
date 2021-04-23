@@ -13,17 +13,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UBSAndroidApplication">
-        <activity android:name=".LoginPage"></activity>
-        <activity android:name=".LoginForgotPassword" />
-        <activity android:name=".RegistrationSetSecurityQuestions" />
-        <activity android:name=".RegistrationPage" />
-        <activity android:name=".ExchangeAnnoucement" />
+
+
+
+        <activity android:name=".LoginPage"
+            android:label= "UBS Login" />
+        <activity android:name=".LoginForgotPassword"
+            android:label= "UBS Forgot Password" />
+        <activity android:name=".LoginResetSecurityQuestions"
+            android:label= "UBS Forgot Password"/>
+        <activity android:name=".LoginResetPassword"
+            android:label= "UBS Forgot Password"/>
+
+        <activity android:name=".RegistrationPage"
+            android:label= "UBS Registration" />
+        <activity android:name=".RegistrationSetSecurityQuestions"
+            android:label= "UBS Registration"/>
+
+
         <activity
             android:name=".Exchange"
             android:label="@string/title_activity_exchange"
             android:theme="@style/Theme.UBSAndroidApplication.NoActionBar" />
-        <activity android:name=".LoginResetSecurityQuestions" />
-        <activity android:name=".LoginResetPassword" />
         <activity android:name=".homepage" />
         <activity android:name=".Search" />
         <!--

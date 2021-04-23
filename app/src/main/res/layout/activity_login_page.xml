@@ -2,14 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
+
     android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+
+
     tools:context=".LoginPage">
+
+
 
     <TextView
         android:id="@+id/LoginUBSTitle"
@@ -17,27 +21,35 @@
         android:layout_height="wrap_content"
 
         android:text="University Bazzar System"
+        android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textAlignment="center"
 
-        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toTopOf="@id/LoginUserIDTitle"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/LoginUserIDTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginTop="70dp"
         android:text="UserID"
+
+
         android:textStyle="bold"
 
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="235dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/LoginUsername"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/LoginUBSTitle"
+
         />
 
 
@@ -46,29 +58,27 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="45dp"
         android:hint="Username"
 
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/LoginPassTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginUserIDTitle" />
 
     <TextView
         android:id="@+id/LoginPassTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginBottom="20dp"
         android:text="Password"
-        android:textStyle="bold"
 
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="340dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/LoginPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginUsername" />
 
     <EditText
         android:id="@+id/LoginPassword"
@@ -76,13 +86,12 @@
         android:layout_height="wrap_content"
 
         android:hint="Password"
+        app:layout_constraintBottom_toTopOf="@+id/LoginButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginPassTitle"
 
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="365dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        />
 
 
     <Button
@@ -90,32 +99,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginTop="35dp"
         android:text="Login"
 
-        android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="210dp"
+        app:layout_constraintBottom_toTopOf="@id/LoginForgotPasswordButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginPassword"
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        />
 
 
     <Button
         android:id="@+id/LoginForgotPasswordButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
         android:text="Forgot Password?"
 
-        android:layout_gravity="start"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="16dp"
 
-        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fillViewport="true"
-    >
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:orientation="vertical"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
 
 
-        tools:context=".RegistrationPage">
+    tools:context=".RegistrationPage">
 
         <TextView
+
             android:id="@+id/RegisUBSTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +28,7 @@
 
 
 
-            app:layout_constraintBottom_toTopOf="@id/RegisFirstNameTitle"
+            app:layout_constraintBottom_toTopOf="@id/RegisFullNameTitle"
             app:layout_constraintEnd_toEndOf="parent"
 
             app:layout_constraintStart_toStartOf="parent"
@@ -43,35 +38,35 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
-            android:id="@+id/RegisFirstNameTitle"
+            android:id="@+id/RegisFullNameTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="45dp"
 
             android:layout_marginRight="13dp"
             android:layout_marginBottom="10dp"
-            android:text="First Name:"
+            android:text="Full Name:"
             android:textStyle="bold"
 
 
-            app:layout_constraintBottom_toTopOf="@id/RegisLastNameTitle"
+            app:layout_constraintBottom_toTopOf="@id/RegisEmailTitle"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/RegisFirstName"
+            app:layout_constraintRight_toLeftOf="@id/RegisFullName"
 
             app:layout_constraintTop_toBottomOf="@id/RegisUBSTitle" />
 
         <EditText
-            android:id="@+id/RegisFirstName"
+            android:id="@+id/RegisFullName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:hint="Enter First Name"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="40dp"
+            android:hint="Enter Your First and Last Name"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="20dp"
 
-            app:layout_constraintBottom_toTopOf="@id/RegisLastame"
-            app:layout_constraintLeft_toRightOf="@id/RegisFirstNameTitle"
+            app:layout_constraintBottom_toTopOf="@id/RegisEmail"
+            app:layout_constraintLeft_toRightOf="@id/RegisFullNameTitle"
             app:layout_constraintRight_toRightOf="parent"
 
             app:layout_constraintTop_toBottomOf="@id/RegisUBSTitle"
@@ -79,7 +74,7 @@
 
 
         <TextView
-            android:id="@+id/RegisLastNameTitle"
+            android:id="@+id/RegisEmailTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -90,33 +85,34 @@
             android:layout_marginRight="15dp"
 
             android:layout_marginBottom="0dp"
-            android:text="Last Name:"
+            android:text="Email:"
             android:textStyle="bold"
 
 
             app:layout_constraintBottom_toTopOf="@id/RegisUniversityTitle"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/RegisLastame"
+            app:layout_constraintRight_toLeftOf="@id/RegisEmail"
 
-            app:layout_constraintTop_toBottomOf="@id/RegisFirstNameTitle"
+            app:layout_constraintTop_toBottomOf="@id/RegisFullNameTitle"
             />
 
         <EditText
-            android:id="@+id/RegisLastame"
+            android:id="@+id/RegisEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:layout_marginRight="0dp"
+            android:layout_marginTop="10dp"
 
-            android:hint="Enter Last Name"
+            android:hint="Enter Email Address"
             android:layout_marginBottom="30dp"
 
 
             app:layout_constraintBottom_toTopOf="@id/RegisUniversitySpinner"
-            app:layout_constraintLeft_toRightOf="@id/RegisLastNameTitle"
+            app:layout_constraintLeft_toRightOf="@id/RegisEmailTitle"
             app:layout_constraintRight_toRightOf="parent"
 
-            app:layout_constraintTop_toBottomOf="@id/RegisFirstName" />
+            app:layout_constraintTop_toBottomOf="@id/RegisFullName" />
 
         <TextView
             android:id="@+id/RegisUniversityTitle"
@@ -124,7 +120,7 @@
             android:layout_height="wrap_content"
 
 
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="35dp"
             android:layout_marginBottom="40dp"
 
 
@@ -137,7 +133,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/RegisUniversitySpinner"
 
-            app:layout_constraintTop_toBottomOf="@id/RegisLastNameTitle" />
+            app:layout_constraintTop_toBottomOf="@id/RegisEmailTitle" />
 
 
         <Spinner
@@ -152,7 +148,7 @@
             app:layout_constraintLeft_toRightOf="@id/RegisUniversityTitle"
             app:layout_constraintRight_toRightOf="parent"
 
-            app:layout_constraintTop_toBottomOf="@id/RegisLastame"
+            app:layout_constraintTop_toBottomOf="@id/RegisEmail"
 
             />
 
@@ -184,7 +180,8 @@
             android:layout_height="wrap_content"
 
 
-            android:hint="At least 8 characters long, alphanumeric and no wild characters."
+
+            android:hint="Create a Username"
 
 
             android:layout_marginTop="0dp"
@@ -204,10 +201,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+
             android:text="Create Password"
             android:textStyle="bold"
 
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="35dp"
             android:layout_marginRight="0dp"
             android:layout_marginBottom="10dp"
 
@@ -222,8 +220,9 @@
             android:id="@+id/RegisCreatePassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:password="true"
 
-            android:hint="Must include letters, at least one number, at least a capital letter."
+            android:hint="Enter a password"
 
             android:layout_marginTop="0dp"
             android:layout_marginRight="0dp"
@@ -242,6 +241,7 @@
             android:id="@+id/RegisConfirmPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:password="true"
 
             android:hint="Confirm Password"
 
@@ -268,7 +268,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
 
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="50dp"
 
             app:layout_constraintRight_toRightOf="parent"
@@ -277,4 +277,3 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>

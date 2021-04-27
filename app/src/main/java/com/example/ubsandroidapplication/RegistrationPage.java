@@ -1,10 +1,10 @@
 package com.example.ubsandroidapplication;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class RegistrationPage extends AppCompatActivity {
+public class RegistrationPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView RegisUSBTitle, RegisFullNameTitle, RegisEmailTitle, RegisUniversityTitle, RegisCreateUserIDTitle, RegisCreatePasswordTitle;
     EditText RegisFullName, RegisEmail, RegisCreateUserID, RegisCreatePassword, RegisConfirmPassword;
@@ -48,20 +48,12 @@ public class RegistrationPage extends AppCompatActivity {
         // FirebaseAuth
         fAuth = FirebaseAuth.getInstance();
 
-        //Contents of the Spinner
-        String[] arraySpinner = new String[]{
-                "Select Your University","Abilene Christian University","Baylor University", "Sam Houston State University",
-                "Southern Methodist University", "Texas A&M Univeristy", "Texas Christian University",
-                "University of Texas at Austin", "Univeristy of Texas at Arlington",
-                "Univeristy of Texas at Dallas", "University of North Texas"
-        };
-
         // Spinner
         RegisUniveristySpinner = findViewById(R.id.RegisUniversitySpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, arraySpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.Universities, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         RegisUniveristySpinner.setAdapter(adapter);
-        RegisUniveristySpinner.setSelection(0);
+        RegisUniveristySpinner.setOnItemSelectedListener(this);
 
         // Have the password
         RegisCreatePassword.setTransformationMethod(new PasswordTransformationMethod());
@@ -89,22 +81,24 @@ public class RegistrationPage extends AppCompatActivity {
                     RegisEmail.setError("Must Enter an Email");
                     return;
                 }
-                String Univ = RegisUniveristySpinner.getSelectedItem().toString();
-                if(Univ == ""){
-                    TextView errorText = (TextView)RegisUniveristySpinner.getSelectedView();
-                    errorText.setError("");
-                    errorText.setTextColor(Color.RED);
-                    errorText.setText("University Not Selected");
-                }
 
                 if(TextUtils.isEmpty(username)){
                     RegisCreateUserID.setError("Must Enter a Username");
                     return;
                 }
 
+                if(username.length() < 8){
+                    RegisCreateUserID.setError("Username Must be at Least 8 Characters");
+                }
+
+
                 if(TextUtils.isEmpty(password)){
                     RegisCreatePassword.setError("Must Enter a Password");
                     return;
+                }
+
+                if(password.length() < 8){
+                    RegisCreatePassword.setError("Password Must be at Least 8 Characters");
                 }
 
                 if(TextUtils.isEmpty(confirmPass)){
@@ -112,9 +106,25 @@ public class RegistrationPage extends AppCompatActivity {
                     return;
                 }
 
+                if(!confirmPass.equals(password))
+                {
+                    RegisConfirmPassword.setError("Passwords Don't Match");
+                    return;
+                }
+
 
             }
         });
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }

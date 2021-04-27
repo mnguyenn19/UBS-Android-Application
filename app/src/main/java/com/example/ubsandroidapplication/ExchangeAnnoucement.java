@@ -2,13 +2,20 @@ package com.example.ubsandroidapplication;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
+
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import com.example.ubsandroidapplication.ui.main.SectionsPagerAdapter;
 
 public class ExchangeAnnoucement extends AppCompatActivity {
 
@@ -22,6 +29,25 @@ public class ExchangeAnnoucement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exchange_annoucement);
 
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+        FloatingActionButton fab = findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+
+
+
+        /*
         pageFragViewer = (ViewPager) findViewById(R.id.exchangePgFrag);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         pageTab = (TabLayout) findViewById(R.id.exchangeTab);
@@ -40,7 +66,7 @@ public class ExchangeAnnoucement extends AppCompatActivity {
         pageTab.getTabAt(2).setIcon(R.drawable.exchange_edit_35);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setElevation(0);
+        actionBar.setElevation(0);*/
 
     }
 }

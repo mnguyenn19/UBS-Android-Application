@@ -19,7 +19,7 @@ public class ExchangeCreateFrag extends Fragment {
         return view;
     }
 
-    public ExchangeCreateFrag() {
+    //public ExchangeCreateFrag() {
 
-    }
+    //}
 }

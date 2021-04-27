@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UBSAndroidApplication">
-        <activity android:name=".ClubViewYourClubs"></activity>
+        <activity
+            android:name=".exchangeTab"
+            android:label="@string/title_activity_exchange_tab"
+            android:theme="@style/Theme.UBSAndroidApplication.NoActionBar"></activity>
+        <activity android:name=".ClubViewYourClubs" />
         <activity
             android:name=".LoginPage"
             android:label="UBS Login" />
@@ -36,8 +40,7 @@
             android:name=".ExchangeAnnoucement"
             android:label="Exchange Annoucement"
             android:theme="@style/Theme.UBSAndroidApplication.NoActionBar" />
-        <activity
-            android:name=".Search"/>
+        <activity android:name=".Search" />
         <!--
                 <uses-library
                     android:name="com.google.android.wearable"

@@ -16,8 +16,8 @@
 
         <activity
             android:name=".exchangeTab"
-            android:label="@string/title_activity_exchange_tab"
             android:theme="@style/Theme.UBSAndroidApplication.NoActionBar" />
+
         <activity android:name=".ClubViewYourClubs" />
 
         <activity android:name=".MainActivity"></activity>

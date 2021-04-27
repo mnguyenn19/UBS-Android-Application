@@ -18,9 +18,9 @@
         android:layout_width="401dp"
         android:layout_height="?attr/actionBarSize"
         android:layout_margin="5dp"
-        android:background="@color/material_on_background_emphasis_medium"
+        android:background="@drawable/search_layout"
         android:padding="10dp"
-        app:queryHint="Search" />
+        app:queryHint="Search here" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchRecyclerView"

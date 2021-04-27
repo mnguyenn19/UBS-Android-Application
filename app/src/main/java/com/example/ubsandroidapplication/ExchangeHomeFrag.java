@@ -1,9 +1,16 @@
 package com.example.ubsandroidapplication;
 
+import android.content.Context;
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,27 +18,142 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class
-
-
-ExchangeHomeFrag extends Fragment {
-    View view;
+public class ExchangeHomeFrag extends Fragment {
+    private View view;
 
     private RecyclerView rV;
     private List<Database> post;
+    private DatabaseReference AnnouncementRef, UsersRef;
+    private FirebaseAuth exchangeAuth;
+    private String userID;
+
+    public ExchangeHomeFrag() {
+
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.exchange_home_frag, container, false);
+
         rV = (RecyclerView) view.findViewById(R.id.home_recycler_viewer);
-        RecyclerViewAdapter recyclerAdapter = new RecyclerViewAdapter(getContext(),post);
+        //RecyclerViewAdapter recyclerAdapter = new RecyclerViewAdapter(getContext(),post);
         rV.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rV.setAdapter(recyclerAdapter);
+        //rV.setAdapter(recyclerAdapter);
+
+        exchangeAuth = FirebaseAuth.getInstance();
+        userID = exchangeAuth.getCurrentUser().getUid();
+        AnnouncementRef = FirebaseDatabase.getInstance().getReference().child("Database").child("User").child("Exchange").child(userID);
+        UsersRef = FirebaseDatabase.getInstance().getReference().child("Database").child("User").child("Exchange");
+
         return view;
+    }
+
+    public static class exchangeViewHolder extends RecyclerView.ViewHolder{
+        private TextView postAnnTitle;
+        private TextView postAnnDescription;
+        private TextView postAnnUniversity;
+        private TextView postAnnUsername;
+        private LinearLayout postSingleItem;
+
+        public exchangeViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            postSingleItem = (LinearLayout) itemView.findViewById(R.id.postSingleAnnouncement);
+            postAnnTitle = (TextView) itemView.findViewById(R.id.exchangePostTitle);
+            postAnnDescription = (TextView) itemView.findViewById(R.id.exchangeDescription);
+            postAnnUniversity = (TextView) itemView.findViewById(R.id.exchangeUni);
+            postAnnUsername = (TextView) itemView.findViewById(R.id.exchangeUsername);
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Database>()
+                .setQuery(AnnouncementRef, Database.class)
+                .build();
+
+        final FirebaseRecyclerAdapter<Database, exchangeViewHolder> adapter = new FirebaseRecyclerAdapter<Database, exchangeViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull exchangeViewHolder holder, int position, @NonNull Database model) {
+                String userIDs = getRef(position).getKey();
+                UsersRef.child(userIDs).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String profUsername = snapshot.child("excUsername").getValue().toString();
+                        String profTitle = snapshot.child("excTitle").getValue().toString();
+                        String profDesc = snapshot.child("excAnnouncementBox").getValue().toString();
+                        String profUni = snapshot.child("excUniversity").getValue().toString();
+
+                        holder.postAnnUsername.setText(profUsername);
+                        holder.postAnnUniversity.setText(profUni);
+                        holder.postAnnDescription.setText(profDesc);
+                        holder.postAnnTitle.setText(profTitle);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+
+            @NonNull
+            @Override
+            public exchangeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View viewer = LayoutInflater.from(parent.getContext()).inflate(R.layout.exchange_home_option, parent, false);
+                exchangeViewHolder viewHolder = new exchangeViewHolder(viewer);
+
+
+                //final ExchangeRVA.rva_ExchangeVH vH = new ExchangeRVA.rva_ExchangeVH(view);
+
+                /*Dialog box;
+                List<Database> rvaInfo;
+                Context rvaContext;
+                box = new Dialog(rvaContext);
+                box.setContentView(R.layout.exchange_view_post_box);
+                box.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));    //makes the box behind transparent
+                */
+
+                viewHolder.postSingleItem.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        /*
+                        TextView boxPostName = (TextView) box.findViewById(R.id.boxTitle);
+                        TextView boxPostDescription = (TextView) box.findViewById(R.id.boxDescription);
+                        TextView boxPostUniversity = (TextView) box.findViewById(R.id.boxUniversity);
+                        TextView boxPostUsername = (TextView) box.findViewById(R.id.boxUsername);
+                        boxPostName.setText(rvaInfo.get(viewHolder.getAdapterPosition()).getExcTitle());
+                        boxPostDescription.setText(rvaInfo.get(viewHolder.getAdapterPosition()).getExcAnnouncementBox());
+                        boxPostUniversity.setText(rvaInfo.get(viewHolder.getAdapterPosition()).getExcUniversity());
+                        boxPostUsername.setText(rvaInfo.get(viewHolder.getAdapterPosition()).getExcUsername());
+
+                        Toast.makeText(rvaContext,"Test Click" + String.valueOf(viewHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                        box.show();
+                        */
+                    }
+                });
+                return viewHolder;
+            }
+        };
+        rV.setAdapter(adapter);
+        adapter.startListening();
+
     }
 
     @Override

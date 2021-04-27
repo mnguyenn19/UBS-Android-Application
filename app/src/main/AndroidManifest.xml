@@ -33,11 +33,11 @@
             android:name=".RegistrationSetSecurityQuestions"
             android:label="UBS Registration" />
         <activity
-            android:name=".Exchange"
-            android:label="@string/title_activity_exchange"
+            android:name=".ExchangeAnnoucement"
+            android:label="Exchange Annoucement"
             android:theme="@style/Theme.UBSAndroidApplication.NoActionBar" />
-        <activity android:name=".homepage" />
-        <activity android:name=".Search" />
+        <activity
+            android:name=".Search"/>
         <!--
                 <uses-library
                     android:name="com.google.android.wearable"

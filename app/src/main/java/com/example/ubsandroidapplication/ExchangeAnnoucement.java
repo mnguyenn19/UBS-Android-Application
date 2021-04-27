@@ -3,6 +3,7 @@ package com.example.ubsandroidapplication;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -12,7 +13,8 @@ import com.google.android.material.tabs.TabLayout;
 public class ExchangeAnnoucement extends AppCompatActivity {
 
     private ViewPager pageFragViewer;
-    private ViewPagerAdapter adapter;
+    //private ViewPagerAdapter adapter;
+    private RecyclerView adapter;
     private TabLayout pageTab;
 
     @Override

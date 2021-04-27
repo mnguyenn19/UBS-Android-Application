@@ -14,13 +14,14 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 
 import org.w3c.dom.Text;
 
 import java.util.List;
-
-public class ExchangeRVA extends RecyclerView.Adapter<ExchangeRVA.rva_ExchangeVH> {
-
+/*
+//public class ExchangeRVA extends RecyclerView.Adapter<ExchangeRVA.rva_ExchangeVH> {
+public class ExchangeRVA extends FirebaseRecyclerAdapter<ExchangeRVA.rva_ExchangeVH> {
     Context rvaContext;
     List<Database> rvaInfo;
     Dialog box;
@@ -44,7 +45,7 @@ public class ExchangeRVA extends RecyclerView.Adapter<ExchangeRVA.rva_ExchangeVH
             postAnnTitle = (TextView) itemView.findViewById(R.id.exchangePostTitle);
             postAnnDescription = (TextView) itemView.findViewById(R.id.exchangeDescription);
             postAnnUniversity = (TextView) itemView.findViewById(R.id.exchangeUni);
-            postAnnUsername =(TextView) itemView.findViewById(R.id.exchangeUsername);
+            postAnnUsername = (TextView) itemView.findViewById(R.id.exchangeUsername);
         }
     }
 
@@ -91,22 +92,5 @@ public class ExchangeRVA extends RecyclerView.Adapter<ExchangeRVA.rva_ExchangeVH
         return rvaInfo.size();
     }
 
-    /*public static class rva_ExchangeVH extends RecyclerView.ViewHolder {
 
-        private TextView postAnnTitle;
-        private TextView postAnnDescription;
-        private TextView postAnnUniversity;
-        private TextView postAnnUsername;
-        private LinearLayout postSingleItem;
-
-        public rva_ExchangeVH(View vhView) {
-            super(vhView);
-
-            postSingleItem = (LinearLayout) itemView.findViewById(R.id.postSingleAnnouncement);
-            postAnnTitle = (TextView) itemView.findViewById(R.id.exchangePostTitle);
-            postAnnDescription = (TextView) itemView.findViewById(R.id.exchangeDescription);
-            postAnnUniversity = (TextView) itemView.findViewById(R.id.exchangeUni);
-            postAnnUsername =(TextView) itemView.findViewById(R.id.exchangeUsername);
-        }
-    }*/
-}
+}*/

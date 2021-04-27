@@ -44,9 +44,9 @@ public class LoginResetSecurityQuestions extends AppCompatActivity implements Ad
         // All TextViews
         LoginSQTitle = findViewById(R.id.loginResetSQTitle);
 
-        SQAnswer1 = findViewById(R.id.loginSQ1Answer);
-        SQAnswer2 = findViewById(R.id.loginSQ2Answer);
-        SQAnswer3 = findViewById(R.id.loginSQ3Answer);
+        SQAnswer1 = findViewById(R.id.loginSQ1ResetAnswer);
+        SQAnswer2 = findViewById(R.id.loginSQ2ResetAnswer);
+        SQAnswer3 = findViewById(R.id.loginSQ3ResetAnswer);
 
         ResetSQBtn = findViewById(R.id.loginResetButton);
         ResetSQBtn.setOnClickListener(new View.OnClickListener() {

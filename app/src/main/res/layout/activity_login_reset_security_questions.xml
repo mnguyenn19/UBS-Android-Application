@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
 
         android:text="Reset Security Questions"
-        android:textSize="17sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="150dp"
 
@@ -40,7 +40,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"
 
-        app:layout_constraintBottom_toTopOf="@id/loginSQ1Answer"
+        app:layout_constraintBottom_toTopOf="@id/loginSQ1ResetAnswer"
         app:layout_constraintLeft_toLeftOf="parent"
 
 
@@ -53,7 +53,7 @@
 
 
     <EditText
-        android:id="@+id/loginSQ1Answer"
+        android:id="@+id/loginSQ1ResetAnswer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:password="true"
@@ -83,7 +83,7 @@
         android:layout_marginBottom="20dp"
 
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginSQ1Answer"
+        app:layout_constraintTop_toBottomOf="@id/loginSQ1ResetAnswer"
 
 
         />

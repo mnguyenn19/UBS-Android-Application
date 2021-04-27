@@ -84,6 +84,7 @@
         android:id="@+id/LoginPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:password="true"
 
         android:hint="Password"
         app:layout_constraintBottom_toTopOf="@+id/LoginButton"

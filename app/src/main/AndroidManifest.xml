@@ -13,11 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UBSAndroidApplication">
+
         <activity
             android:name=".exchangeTab"
             android:label="@string/title_activity_exchange_tab"
-            android:theme="@style/Theme.UBSAndroidApplication.NoActionBar"></activity>
+            android:theme="@style/Theme.UBSAndroidApplication.NoActionBar" />
         <activity android:name=".ClubViewYourClubs" />
+
+        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".RegistrationPage"
+            android:label="UBS Registration" />
+        <activity
+            android:name=".RegistrationSetSecurityQuestions"
+            android:label="UBS Registration" />
+
         <activity
             android:name=".LoginPage"
             android:label="UBS Login" />
@@ -25,17 +35,12 @@
             android:name=".LoginForgotPassword"
             android:label="UBS Forgot Password" />
         <activity
-            android:name=".LoginResetSecurityQuestions"
-            android:label="UBS Forgot Password" />
-        <activity
             android:name=".LoginResetPassword"
             android:label="UBS Forgot Password" />
         <activity
-            android:name=".RegistrationPage"
-            android:label="UBS Registration" />
-        <activity
-            android:name=".RegistrationSetSecurityQuestions"
-            android:label="UBS Registration" />
+            android:name=".LoginResetSecurityQuestions"
+            android:label="UBS Forgot Password" />
+
         <activity
             android:name=".ExchangeAnnoucement"
             android:label="Exchange Annoucement"
@@ -53,7 +58,7 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
         -->
-        <activity android:name=".MainActivity">
+        <activity android:name=".UbsStart">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

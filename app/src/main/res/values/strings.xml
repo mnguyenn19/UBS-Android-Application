@@ -17,4 +17,35 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string-array name="Universities">
+        <item>Select Your University</item>
+        <item>Abilene Christian University</item>
+        <item>Baylor University</item>
+        <item>Sam Houston State University</item>
+        <item>Southern Methodist University</item>
+        <item>Texas Christian University</item>
+        <item>University of Texas at Arlington</item>
+        <item>University of Texas at Austin</item>
+        <item>Univeristy of Texas at Dallas</item>
+        <item>University of North Texas</item>
+    </string-array>
+
+    <string-array name="SecurityQuestions">
+        <item>Select a Security Question</item>
+        <item>What is the name of your first pet?</item>
+        <item>What was your first car?</item>
+        <item>What elementary school did you attend?</item>
+        <item>What is the name of the town where you were born?</item>
+        <item>Who was your childhood hero?</item>
+        <item>What is your favorite book?</item>
+        <item>What is your mother\'s maiden name?</item>
+        <item>What is your favorite food?</item>
+        <item>What city were you born in?</item>
+    </string-array>
+
+
+
+
 </resources>

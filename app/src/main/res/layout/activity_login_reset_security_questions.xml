@@ -56,6 +56,7 @@
         android:id="@+id/loginSQ1Answer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:password="true"
 
         android:hint="Answer to Security Question 1"
 
@@ -91,6 +92,7 @@
         android:id="@+id/loginSQ2ResetAnswer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:password="true"
 
         android:hint="Answer to Security Question 2"
 
@@ -127,6 +129,7 @@
         android:id="@+id/loginSQ3ResetAnswer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:password="true"
 
         android:hint="Answer to Security Question 3"
 

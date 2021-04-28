@@ -25,7 +25,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
 
-        app:layout_constraintBottom_toTopOf="@id/LoginUserIDTitle"
+        app:layout_constraintBottom_toTopOf="@id/LoginEmailTitle"
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -35,17 +35,17 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
-        android:id="@+id/LoginUserIDTitle"
+        android:id="@+id/LoginEmailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:layout_marginTop="70dp"
-        android:text="UserID"
+        android:text="Email"
 
 
         android:textStyle="bold"
 
-        app:layout_constraintBottom_toTopOf="@id/LoginUsername"
+        app:layout_constraintBottom_toTopOf="@id/LoginEmail"
         app:layout_constraintLeft_toLeftOf="parent"
 
         app:layout_constraintTop_toBottomOf="@id/LoginUBSTitle"
@@ -54,18 +54,18 @@
 
 
     <EditText
-        android:id="@+id/LoginUsername"
+        android:id="@+id/LoginEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
         android:layout_marginTop="20dp"
         android:layout_marginBottom="45dp"
-        android:hint="Username"
+        android:hint="Enter Email"
 
         app:layout_constraintBottom_toTopOf="@+id/LoginPassTitle"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginUserIDTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginEmailTitle" />
 
     <TextView
         android:id="@+id/LoginPassTitle"
@@ -78,7 +78,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/LoginPassword"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginEmail" />
 
     <EditText
         android:id="@+id/LoginPassword"
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:password="true"
 
-        android:hint="Password"
+        android:hint="Enter Password"
         app:layout_constraintBottom_toTopOf="@+id/LoginButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

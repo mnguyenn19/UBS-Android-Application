@@ -46,16 +46,21 @@ public class LoginPage extends AppCompatActivity {
                 String email = Email.getText().toString().trim();
                 String pass = Password.getText().toString().trim();
 
+                boolean b = false;
+
                 if(TextUtils.isEmpty(pass)){
                     Password.setError("Enter Password");
+                    b = true;
+                    return;
                 }
 
                 if(TextUtils.isEmpty(email)){
                     Email.setError("Enter Email");
+                    b = true;
+                    return;
                 }
 
-
-
+                if(!b){
                 // authenticate user
                 fAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -73,7 +78,7 @@ public class LoginPage extends AppCompatActivity {
                             finish();
                         }
                     }
-                });
+                });}
 
 
             }

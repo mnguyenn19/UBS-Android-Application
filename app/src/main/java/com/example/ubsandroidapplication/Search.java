@@ -3,15 +3,16 @@ package com.example.ubsandroidapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+//import android.widget.Toolbar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -40,7 +41,8 @@ public class Search extends AppCompatActivity
         searchView = findViewById(R.id.searchPage);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setActionBar(toolbar);
+        //setActionBar(toolbar);
+        setSupportActionBar(toolbar);
         ImageView backArrow = findViewById(R.id.backArrow);
         ImageView settingsIcon = findViewById(R.id.settingsIcon);
         TextView appName = findViewById(R.id.appName);
@@ -59,7 +61,7 @@ public class Search extends AppCompatActivity
             }
         });
 
-        appName.setText("UBS Application");
+        appName.setText("UBS");
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.example.ubsandroidapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+//import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 //import android.widget.Toolbar;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -82,6 +84,7 @@ public class Search extends AppCompatActivity
                         {
                             directory.add(ds.getValue(Database.class));
                         }
+                        //recyclerView.setLayoutManager(new LinearLayoutManager(getBaseContext())); // delete?
                         searchAdapter sa = new searchAdapter(directory);
                         recyclerView.setAdapter(sa);
                     }

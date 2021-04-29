@@ -45,7 +45,8 @@
             android:name=".ExchangeAnnoucement"
             android:label="Exchange Annoucement"
             android:theme="@style/Theme.UBSAndroidApplication.NoActionBar" />
-        <!--<activity android:name=".Search" />-->
+
+        <activity android:name=".Search" />
         <!--
                 <uses-library
                     android:name="com.google.android.wearable"
@@ -58,7 +59,7 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
         -->
-        <activity android:name=".Search"
+        <activity android:name=".UbsStart"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

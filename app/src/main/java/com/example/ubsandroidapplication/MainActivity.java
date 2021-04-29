@@ -3,6 +3,7 @@ package com.example.ubsandroidapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +14,12 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
     ///Variables
+    Button moveSearch;
+    Button moveExchange;
+    Button moveSales;
+    Button moveCommunication;
+    Button moveClubs;
+
 
     //Firebase Database
     FirebaseDatabase rootNode;
@@ -32,6 +39,53 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        moveSearch = findViewById(R.id.searchButton);
+        moveSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Search.class);
+                startActivity(intent);
+            }
+        });
+
+        moveExchange = findViewById(R.id.exchangeButton);
+        moveSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ExchangeAnnoucement.class);
+                startActivity(intent);
+            }
+        });
+
+        moveClubs = findViewById(R.id.clubsButton);
+        moveSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ClubViewYourClubs.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
+        moveSales = findViewById(R.id.salesButton);
+        moveSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SalesFilename.class);
+                startActivity(intent);
+            }
+        });
+
+        moveCommunication = findViewById(R.id.commButton);
+        moveSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,CommFileName.class);
+                startActivity(intent);
+            }
+        });*/
+
     }
 
     public void logoutBtn(View view) {

@@ -17,9 +17,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class RegistrationPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -28,6 +33,7 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
     Button RegisterButton;
     Spinner RegisUniveristySpinner;
     FirebaseAuth fAuth;
+    DatabaseReference rootDatabaseref;
 
 
 
@@ -74,6 +80,8 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }*/
 
+        //Database
+        rootDatabaseref = FirebaseDatabase.getInstance().getReference().child("Database").child("User");
 
 
         RegisterButton.setOnClickListener(new View.OnClickListener() {
@@ -147,6 +155,21 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
                             } else {
                                 Toast.makeText(RegistrationPage.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
+                        }
+                    });
+
+                    //Updating Database fields
+                    HashMap hashMap = new HashMap();
+                    hashMap.put("regFirstName", fullName);
+                    hashMap.put("username", username);
+                    hashMap.put("password", password);
+                    hashMap.put("email", email);
+
+                    rootDatabaseref.child("Registration").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                        @Override
+                        public void onSuccess(Object o) {
+                            Toast.makeText(RegistrationPage.this, "Database updated", Toast.LENGTH_SHORT).show();
+                            
                         }
                     });
                 

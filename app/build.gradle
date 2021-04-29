@@ -48,4 +48,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     compileOnly 'com.google.android.wearable:wearable:2.6.0'
+
+    //implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    //implementation 'com.google.firebase:firebase-analytics'
+    //implementation 'com.google.firebase:firebase-database:19.6.0'
+
+    /** used to fix error */
+    //implementation 'androidx.multidex:multidex:2.0.1'
 }

@@ -5,30 +5,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/exchangeBgdFg">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="UBS TEAM 11"
+        android:layout_width="252dp"
+        android:layout_height="46dp"
+        android:text="Welcome to UBS!"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.077" />
 
     <Button
         android:id="@+id/LogoutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="logoutBtn"
         android:text="Logout"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606"
+        app:layout_constraintVertical_bias="0.956" />
 
-        android:onClick="logoutBtn"
-        />
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="157dp"
+        android:layout_height="122dp"
+        android:text="Search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/salesButton"
+        android:layout_width="164dp"
+        android:layout_height="127dp"
+        android:text="Sales"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781" />
+
+    <Button
+        android:id="@+id/exchangeButton"
+        android:layout_width="168dp"
+        android:layout_height="119dp"
+        android:text="Exchange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/clubsButton"
+        android:layout_width="144dp"
+        android:layout_height="121dp"
+        android:text="Clubs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.773" />
+
+    <Button
+        android:id="@+id/commButton"
+        android:layout_width="240dp"
+        android:layout_height="115dp"
+        android:text="Communication"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.227" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

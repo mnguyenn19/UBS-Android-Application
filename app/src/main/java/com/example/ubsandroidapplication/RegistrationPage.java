@@ -1,5 +1,6 @@
 package com.example.ubsandroidapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
@@ -10,9 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegistrationPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -61,6 +67,15 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
 
         // Registration Authentication & Error Checking
         RegisterButton = findViewById(R.id.RegisterButton);
+
+
+
+        /*if(fAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }*/
+
+
+
         RegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,49 +85,71 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
                 String password = RegisCreatePassword.getText().toString().trim();
                 String confirmPass = RegisConfirmPassword.getText().toString().trim();
 
+                    boolean b = false;
+                
+                    if (TextUtils.isEmpty(fullName)) {
+                        RegisFullName.setError("Must Enter Your First & Last Name");
+                        b = true;
+                        return;
+                    }
+
+                    if (TextUtils.isEmpty(email)) {
+                        RegisEmail.setError("Must Enter an Email");
+                        b = true;
+                        return;
+                    }
+
+                    if (TextUtils.isEmpty(username)) {
+                        RegisCreateUserID.setError("Must Enter a Username");
+                        b = true;
+                        return;
+                    }
+
+                    if (username.length() < 8) {
+                        RegisCreateUserID.setError("Username Must be at Least 8 Characters");
+                        b = true;
+                        return;
+                    }
 
 
-                if(TextUtils.isEmpty(fullName)){
-                    RegisFullName.setError("Must Enter Your First & Last Name");
-                    return;
-                }
+                    if (TextUtils.isEmpty(password)) {
+                        RegisCreatePassword.setError("Must Enter a Password");
+                        b = true;
+                        return;
+                    }
 
-                if(TextUtils.isEmpty(email)){
-                    RegisEmail.setError("Must Enter an Email");
-                    return;
-                }
+                    if (password.length() < 8) {
+                        RegisCreatePassword.setError("Password Must be at Least 8 Characters");
+                        b = true;
+                        return;
+                    }
 
-                if(TextUtils.isEmpty(username)){
-                    RegisCreateUserID.setError("Must Enter a Username");
-                    return;
-                }
+                    if (TextUtils.isEmpty(confirmPass)) {
+                        RegisConfirmPassword.setError("Must Re-enter the Password");
+                        b = true;
+                        return;
+                    }
 
-                if(username.length() < 8){
-                    RegisCreateUserID.setError("Username Must be at Least 8 Characters");
-                }
-
-
-                if(TextUtils.isEmpty(password)){
-                    RegisCreatePassword.setError("Must Enter a Password");
-                    return;
-                }
-
-                if(password.length() < 8){
-                    RegisCreatePassword.setError("Password Must be at Least 8 Characters");
-                }
-
-                if(TextUtils.isEmpty(confirmPass)){
-                    RegisConfirmPassword.setError("Must Re-enter the Password");
-                    return;
-                }
-
-                if(!confirmPass.equals(password))
-                {
-                    RegisConfirmPassword.setError("Passwords Don't Match");
-                    return;
-                }
-
-
+                    if (!confirmPass.equals(password)) {
+                        RegisConfirmPassword.setError("Passwords Don't Match");
+                        b = true;
+                        return;
+                    }
+                     
+                    if(!b)
+                    fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(RegistrationPage.this, "Successfully Created User", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                finish();
+                            } else {
+                                Toast.makeText(RegistrationPage.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                
             }
         });
 

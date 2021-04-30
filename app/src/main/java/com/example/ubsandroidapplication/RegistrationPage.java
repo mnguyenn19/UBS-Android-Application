@@ -81,7 +81,7 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
         }*/
 
         //Database
-        rootDatabaseref = FirebaseDatabase.getInstance().getReference().child("Database").child("User");
+        rootDatabaseref = FirebaseDatabase.getInstance().getReference("Database").child("User").child("Registration");
 
 
         RegisterButton.setOnClickListener(new View.OnClickListener() {

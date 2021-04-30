@@ -1,28 +1,42 @@
 package com.example.ubsandroidapplication;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.ViewGroup;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.ubsandroidapplication.ui.main.SectionsPagerAdapter;
 
-public class ExchangeAnnoucement extends AppCompatActivity {
+public class ExchangeAnnoucement extends FragmentActivity {
 
     private ViewPager pageFragViewer;
     //private ViewPagerAdapter adapter;
     private RecyclerView adapter;
     private TabLayout pageTab;
+
+    @Nullable
+    //@Override
+    public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_exchange_annoucement, container, false);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +59,7 @@ public class ExchangeAnnoucement extends AppCompatActivity {
         });
 
 
-
-
-        /*
+/*
         pageFragViewer = (ViewPager) findViewById(R.id.exchangePgFrag);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         pageTab = (TabLayout) findViewById(R.id.exchangeTab);

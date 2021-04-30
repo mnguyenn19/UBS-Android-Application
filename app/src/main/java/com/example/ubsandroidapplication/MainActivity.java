@@ -44,45 +44,51 @@ public class MainActivity extends AppCompatActivity {
         moveSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Search.class);
+                Intent intent = new Intent(getApplicationContext(),Search.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         moveExchange = findViewById(R.id.exchangeButton);
-        moveSearch.setOnClickListener(new View.OnClickListener() {
+        moveExchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ExchangeAnnoucement.class);
+                Intent intent = new Intent(getApplicationContext(),ExchangeAnnoucement.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         moveClubs = findViewById(R.id.clubsButton);
-        moveSearch.setOnClickListener(new View.OnClickListener() {
+        moveClubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ClubViewYourClubs.class);
+                Intent intent = new Intent(getApplicationContext(),ClubViewYourClubs.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         /*
         moveSales = findViewById(R.id.salesButton);
-        moveSearch.setOnClickListener(new View.OnClickListener() {
+        moveSales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SalesFilename.class);
+                Intent intent = new Intent(getApplicationContext(), SalesFilename.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         moveCommunication = findViewById(R.id.commButton);
-        moveSearch.setOnClickListener(new View.OnClickListener() {
+        moveCommunication.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,CommFileName.class);
+                Intent intent = new Intent(getApplicationContext(),CommFileName.class);
+                //Intent intent = new Intent(MainActivity.this,CommFileName.class);
                 startActivity(intent);
+                finish();
             }
         });*/
 

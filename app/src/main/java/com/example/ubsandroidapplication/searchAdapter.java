@@ -1,5 +1,6 @@
 package com.example.ubsandroidapplication;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,42 +13,52 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class searchAdapter extends RecyclerView.Adapter<searchAdapter.viewer> {
+public class searchAdapter extends RecyclerView.Adapter<searchAdapter.sVH> {
 
-    ArrayList<Database> list;
-    public searchAdapter(ArrayList<Database> list)
-    {
-        this.list = list;
+    Context context;
+    ArrayList<String> excTitleList;
+    ArrayList<String> excDescList;
+    ArrayList<String> excUniList;
+
+
+    class sVH extends RecyclerView.ViewHolder {
+
+        TextView eTitle, eDesc, eUni;
+        public sVH(View itemView) {
+            super(itemView);
+            eTitle = (TextView) itemView.findViewById(R.id.excTitle);
+            eDesc = (TextView) itemView.findViewById(R.id.excDescription);
+            eUni = (TextView) itemView.findViewById(R.id.excUniversity);
+        }
     }
+
+    public searchAdapter(Context context, ArrayList<String> excTitleList, ArrayList<String> excDescList, ArrayList<String> excUniList) {
+        this.context = context;
+        this.excTitleList = excTitleList;
+        this.excDescList = excDescList;
+        this.excUniList = excUniList;
+    }
+
+
 
     @NonNull
     @Override
-    public viewer onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View vision = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_card_list,parent, false);
-        return new viewer(vision);
+    public searchAdapter.sVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.search_card_list,parent, false);
+        return new searchAdapter.sVH(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull viewer holder, int position) {
-        holder.searchExcTitle.setText(list.get(position).getExcTitle());
-        holder.searchExcDescription.setText(list.get(position).getExcAnnouncementBox());
-        holder.searchExcUniversity.setText(list.get(position).getExcUniversity());
+    public void onBindViewHolder(sVH holder, int position) {
+        holder.eTitle.setText(excTitleList.get(position));
+        holder.eDesc.setText(excDescList.get(position));
+        holder.eUni.setText(excUniList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return excTitleList.size();
     }
 
-    class viewer extends RecyclerView.ViewHolder {
-        TextView searchExcTitle, searchExcDescription, searchExcUniversity; // found in search_card_list.xml
-        public viewer(@NonNull View itemView) {
-            super(itemView);
-            searchExcTitle = itemView.findViewById(R.id.excTitle);
-            searchExcDescription = itemView.findViewById(R.id.excDescription);
-            searchExcUniversity = itemView.findViewById(R.id.excUniversity);
-
-            //how to implement search for other criteria like for sales or members
-        }
-    }
+    //how to implement search for other criteria like for sales or members
 }

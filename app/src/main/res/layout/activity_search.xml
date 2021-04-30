@@ -13,14 +13,14 @@
     <include
         layout="@layout/search_toolbar"/>
 
-    <androidx.appcompat.widget.SearchView
+    <EditText
         android:id="@+id/searchPage"
         android:layout_width="401dp"
         android:layout_height="?attr/actionBarSize"
         android:layout_margin="5dp"
         android:background="@drawable/search_layout"
         android:padding="10dp"
-        app:queryHint="Search here" />
+        android:hint="Search here..." />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchRecyclerView"

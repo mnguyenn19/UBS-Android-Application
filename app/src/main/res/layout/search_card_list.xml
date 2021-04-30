@@ -13,7 +13,7 @@
             android:id="@+id/excTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="sample"
+            android:text="Title goes here"
             android:textSize="25sp"
             android:textStyle="bold"
             android:padding="10dp"/>
@@ -22,13 +22,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="sample"/>
+            android:text="Desc goes here"/>
         <TextView
             android:id="@+id/excUniversity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="sample"/>
+            android:text="Uni goes here"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"

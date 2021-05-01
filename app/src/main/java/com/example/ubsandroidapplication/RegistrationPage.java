@@ -67,6 +67,8 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
         RegisUniveristySpinner.setAdapter(adapter);
         RegisUniveristySpinner.setOnItemSelectedListener(this);
 
+
+
         // Have the password
         RegisCreatePassword.setTransformationMethod(new PasswordTransformationMethod());
 
@@ -92,6 +94,9 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
                 String username = RegisCreateUserID.getText().toString().trim();
                 String password = RegisCreatePassword.getText().toString().trim();
                 String confirmPass = RegisConfirmPassword.getText().toString().trim();
+                String university = RegisUniveristySpinner.getSelectedItem().toString();
+                int selectedUniItem = RegisUniveristySpinner.getSelectedItemPosition();
+                String spinnerPosition = (String)RegisUniveristySpinner.getItemAtPosition(selectedUniItem);
 
                     boolean b = false;
                 
@@ -106,6 +111,7 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
                         b = true;
                         return;
                     }
+
 
                     if (TextUtils.isEmpty(username)) {
                         RegisCreateUserID.setError("Must Enter a Username");
@@ -150,33 +156,39 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(RegistrationPage.this, "Successfully Created User", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                startActivity(new Intent(getApplicationContext(), RegistrationSetSecurityQuestions.class));
                                 finish();
-                            } else {
+
+                                //Updating Database fields
+                                HashMap hashMap = new HashMap();
+                                hashMap.put("regFirstName", fullName);
+                                hashMap.put("username", username);
+                                hashMap.put("password", password);
+                                hashMap.put("email", email);
+                                hashMap.put("university",university);
+
+
+                                rootDatabaseref.child(fAuth.getUid()).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                                    @Override
+                                    public void onSuccess(Object o) {
+                                        Toast.makeText(RegistrationPage.this, "Database updated", Toast.LENGTH_SHORT).show();
+
+                                    }
+                                });
+
+
+                            }
+                            else {
                                 Toast.makeText(RegistrationPage.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
 
-                    //Updating Database fields
-                    HashMap hashMap = new HashMap();
-                    hashMap.put("regFirstName", fullName);
-                    hashMap.put("username", username);
-                    hashMap.put("password", password);
-                    hashMap.put("email", email);
-
-                    rootDatabaseref.child("Registration").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
-                        @Override
-                        public void onSuccess(Object o) {
-                            Toast.makeText(RegistrationPage.this, "Database updated", Toast.LENGTH_SHORT).show();
-                            
-                        }
-                    });
-                
             }
         });
 
     }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

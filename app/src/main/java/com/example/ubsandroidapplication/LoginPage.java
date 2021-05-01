@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -48,17 +49,17 @@ public class LoginPage extends AppCompatActivity {
 
                 boolean b = false;
 
+                if(TextUtils.isEmpty(email)){
+                    Email.setError("Enter Email");
+                    b = true;
+                    return;
+                }
                 if(TextUtils.isEmpty(pass)){
                     Password.setError("Enter Password");
                     b = true;
                     return;
                 }
 
-                if(TextUtils.isEmpty(email)){
-                    Email.setError("Enter Email");
-                    b = true;
-                    return;
-                }
 
                 if(!b){
                 // authenticate user
@@ -73,32 +74,61 @@ public class LoginPage extends AppCompatActivity {
 
 
                         else{
-                            Toast.makeText(LoginPage.this, "Error !"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), LoginPage.class));
-                            finish();
+                            Toast.makeText(LoginPage.this, "Error: "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            //startActivity(new Intent(getApplicationContext(), LoginPage.class));
+                            //finish();
                         }
                     }
-                });}
-
-
+                });
+                }
             }
-
-
         });
 
+        boolean b;
         ForgotPassBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 String user = Email.getText().toString().trim();
+                boolean c;
+                c = false;
+
 
                 if(TextUtils.isEmpty(user)){
                     Email.setError("Need Email");
+                    c = true;
+                    return;
                 }
 
+
+                if(!c)
+                {
+                    //every user must have an email
+
+                    fAuth.fetchSignInMethodsForEmail(user).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                            if(task.isSuccessful()){
+                                if (!task.getResult().getSignInMethods().isEmpty()) {
+                                    Toast.makeText(LoginPage.this, "User found", Toast.LENGTH_SHORT).show();
+
+                                    Intent myIntent = new Intent(getApplicationContext(),LoginForgotPassword.class);
+                                    myIntent.putExtra("myExtra",user);
+
+                                    startActivity(myIntent);
+                                }
+                                else {
+                                    Toast.makeText(LoginPage.this, "User Doesn't Exists",Toast.LENGTH_SHORT).show();
+                                    //startActivity(new Intent(getApplicationContext(), LoginPage.class));
+                                }}
+                            else{
+                                    Toast.makeText(LoginPage.this, "Error: " +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    //startActivity(new Intent(getApplicationContext(), LoginPage.class));
+                                }
+                        }
+                    });
+                }
             }
-
         });
-
-
     }
 }

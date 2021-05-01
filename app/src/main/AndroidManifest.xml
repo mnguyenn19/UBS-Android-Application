@@ -46,6 +46,7 @@
             android:label="Exchange Annoucement"
             android:theme="@style/Theme.UBSAndroidApplication.NoActionBar" />
 
+
         <activity android:name=".Search"
             android:label="Search"
             android:theme="@style/AppTheme.NoActionBar" />

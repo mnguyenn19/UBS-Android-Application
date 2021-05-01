@@ -32,7 +32,7 @@ public class UbsStart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ubs_start);
 
-        StartLoginBtn =findViewById(R.id.StartLoginButton);
+        StartLoginBtn = findViewById(R.id.StartLoginButton);
         StartRegisterBtn = findViewById(R.id.StartRegisterButton);
         StartUBSTitle = findViewById(R.id.StartUBSTitle);
 

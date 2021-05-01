@@ -4,22 +4,49 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 public class ExchangeCreateFrag extends Fragment {
+
+    private Button excSubmitBtn;
+    private Button excCancelBtn;
+
+    private ViewPager viewPager;
 
     View view;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.exchange_create_frag, container, false);
+
+        excSubmitBtn = (Button) view.findViewById(R.id.exchangeSubmitButton);
+        excCancelBtn = view.findViewById(R.id.exchangeCancelButton);
+        viewPager = (ViewPager) getActivity().findViewById(R.id.exchangePgFrag);
+
+        excSubmitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(1);
+
+                /*FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.exchangePgFrag, new ExchangeHomeFrag());
+                ft.commit();*/
+            }
+        });
+
+        excCancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(1);
+            }
+        });
+
         return view;
     }
 
-    //public ExchangeCreateFrag() {
-
-    //}
 }

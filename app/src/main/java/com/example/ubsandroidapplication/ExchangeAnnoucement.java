@@ -5,10 +5,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ViewGroup;
 
@@ -21,10 +24,40 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.ubsandroidapplication.ui.main.SectionsPagerAdapter;
 
-public class ExchangeAnnoucement extends FragmentActivity {
+public class ExchangeAnnoucement extends AppCompatActivity {
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_exchange_annoucement);
+
+        tabLayout = findViewById(R.id.exchangeTab);
+        viewPager = findViewById(R.id.exchangePgFrag);
+
+        tabLayout.setupWithViewPager(viewPager);
+        ExchangeRVA excAdapter = new ExchangeRVA(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        excAdapter.addFrag(new ExchangeCreateFrag(), "Create Post");
+        excAdapter.addFrag(new ExchangeHomeFrag(), "Home");
+        excAdapter.addFrag(new ExchangeEditFrag(), "Edit Post");
+        viewPager.setAdapter(excAdapter);
+        viewPager.setCurrentItem(1, false);
+
+        /*
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.exchangePgFrag, new ExchangeHomeFrag());
+        fragmentTransaction.commit();
+        */
+    }
+}
+
+/*public class ExchangeAnnoucement extends FragmentActivity {
 
     private ViewPager pageFragViewer;
     //private ViewPagerAdapter adapter;
@@ -47,7 +80,7 @@ public class ExchangeAnnoucement extends FragmentActivity {
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
+        //tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +92,7 @@ public class ExchangeAnnoucement extends FragmentActivity {
         });
 
 
-/*
+
         pageFragViewer = (ViewPager) findViewById(R.id.exchangePgFrag);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         pageTab = (TabLayout) findViewById(R.id.exchangeTab);
@@ -78,7 +111,7 @@ public class ExchangeAnnoucement extends FragmentActivity {
         pageTab.getTabAt(2).setIcon(R.drawable.exchange_edit_35);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setElevation(0);*/
+        actionBar.setElevation(0);
 
     }
-}
+}*/

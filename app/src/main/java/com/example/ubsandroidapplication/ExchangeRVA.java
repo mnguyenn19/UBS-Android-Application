@@ -13,12 +13,52 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
+
+public class ExchangeRVA extends FragmentPagerAdapter {
+
+    private final ArrayList<Fragment> fragArrayList = new ArrayList<>();
+    private final ArrayList<String> fragName = new ArrayList<>();
+
+    public ExchangeRVA(@NonNull FragmentManager fm, int behavior) {
+        super(fm, behavior);
+    }
+
+    @NonNull
+    @Override
+    public Fragment getItem(int position) {
+        return fragArrayList.get(position);
+    }
+
+    @Override
+    public int getCount() {
+        return fragArrayList.size();
+    }
+
+    public void addFrag(Fragment fragment, String name) {
+        fragArrayList.add(fragment);
+        fragName.add(name);
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return fragName.get(position);
+    }
+}
+
+
 /*
 //public class ExchangeRVA extends RecyclerView.Adapter<ExchangeRVA.rva_ExchangeVH> {
 public class ExchangeRVA extends FirebaseRecyclerAdapter<ExchangeRVA.rva_ExchangeVH> {

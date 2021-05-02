@@ -2,12 +2,14 @@ package com.example.ubsandroidapplication;
 
 import android.content.Context;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -32,6 +35,9 @@ import java.util.List;
 
 public class ExchangeHomeFrag extends Fragment {
     private View view;
+
+    private Button excBackBtn;
+    //private ViewPager viewPager;
 
     private RecyclerView rV;
     private List<Database> post;
@@ -57,6 +63,17 @@ public class ExchangeHomeFrag extends Fragment {
         userID = exchangeAuth.getCurrentUser().getUid();
         AnnouncementRef = FirebaseDatabase.getInstance().getReference().child("Database").child("User").child("Exchange").child(userID);
         UsersRef = FirebaseDatabase.getInstance().getReference().child("Database").child("User").child("Exchange");
+
+        excBackBtn = (Button) view.findViewById(R.id.homePageBtn);
+        //viewPager = (ViewPager) getActivity().findViewById(R.id.exchangePgFrag);
+
+        excBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
@@ -175,5 +192,6 @@ public class ExchangeHomeFrag extends Fragment {
         post.add(new Database("", "", "", "", "", "", "", "", "uta010", "Found lost cat", "Description here", "UTA", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", '\0', "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", '\0', ""));
         post.add(new Database("", "", "", "", "", "", "", "", "uta011", "Movie night!", "Description here", "UTA", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", '\0', "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", '\0', ""));
         post.add(new Database("", "", "", "", "", "", "", "", "uta012", "Happy Spring Break", "Description here", "UTA", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", '\0', "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", '\0', ""));
+
     }
 }

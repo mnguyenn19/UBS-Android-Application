@@ -12,8 +12,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_recycler_viewer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="605dp">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/homePageBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
 
 </LinearLayout>

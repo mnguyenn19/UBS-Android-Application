@@ -13,11 +13,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -55,7 +59,7 @@ public class RegistrationSetSecurityQuestions extends AppCompatActivity implemen
         SQ3.setOnItemSelectedListener(this);
 
         fAuth = FirebaseAuth.getInstance();
-        rootDatabaseref = FirebaseDatabase.getInstance().getReference("Database").child("User").child("Registration");
+        //rootDatabaseref = FirebaseDatabase.getInstance().getReference("Database").child("User").child("Registration");
 
 
         // All TextViews
@@ -98,28 +102,89 @@ public class RegistrationSetSecurityQuestions extends AppCompatActivity implemen
                     return;
                 }
 
+
+
                 if(!b) {
                     // instead of replace i think i found the update function and ill be doing that shortly
-                    HashMap hashMap = new HashMap();
-                    hashMap.replace("SQ1", SQ1Question);
-                    hashMap.replace("SQ2", SQ2Question);
-                    hashMap.replace("SQ3", SQ3Question);
-                    hashMap.replace("SQAns1", SQAnswer1);
-                    hashMap.replace("SQAns2", SQAnswer2);
-                    hashMap.replace("SQAns3", SQAnswer3);
 
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                    finish();
-                    //Updating Database fields
+                    //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    //finish();
+
+                    //String cool = String.valueOf(fAuth.getUid());
+                    //Toast.makeText(RegistrationSetSecurityQuestions.this, "User is: "+cool, Toast.LENGTH_SHORT).show();
+
+                    fAuth = FirebaseAuth.getInstance();
+                    rootDatabaseref = FirebaseDatabase.getInstance().getReference("Database").child("User").child("Registration");
+                    Intent myIntent = getIntent();
+                    fAuth.fetchSignInMethodsForEmail(myIntent.getStringExtra("Email")).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                            if(task.isSuccessful()){
+                                if (!task.getResult().getSignInMethods().isEmpty()) {
+                                    Toast.makeText(RegistrationSetSecurityQuestions.this, "Welcome!", Toast.LENGTH_SHORT).show();
+
+                                    //Intent myIntent = new Intent(getApplicationContext(),RegistrationSetSecurityQuestions.class);
+                                    //myIntent.putExtra("myExtra",user);
+
+                                   // startActivity(myIntent);
+                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                    finish();
+                                    HashMap hashMap = new HashMap();
 
 
-                    rootDatabaseref.child(String.valueOf(fAuth.getCurrentUser())).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                                    hashMap.put("SQ1", SQ1Question);
+                                    hashMap.put("SQ2", SQ2Question);
+                                    hashMap.put("SQ3", SQ3Question);
+                                    hashMap.put("SQAns1", SQ1Ans);
+                                    hashMap.put("SQAns2", SQ2Ans);
+                                    hashMap.put("SQAns3", SQ3Ans);
+
+                                    rootDatabaseref.child(fAuth.getUid()).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                                        @Override
+                                        public void onSuccess(Object o) {
+                                            Toast.makeText(RegistrationSetSecurityQuestions.this, "Database updated", Toast.LENGTH_SHORT).show();
+
+                                        }
+                                    });
+
+
+                                }
+                                else {
+                                    Toast.makeText(RegistrationSetSecurityQuestions.this, "User Doesn't Exists",Toast.LENGTH_SHORT).show();
+                                    //startActivity(new Intent(getApplicationContext(), LoginPage.class));
+                                }}
+                            else{
+                                Toast.makeText(RegistrationSetSecurityQuestions.this, "Error: " +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                //startActivity(new Intent(getApplicationContext(), LoginPage.class));
+                            }
+                        }
+                    });
+
+
+
+
+                   /* rootDatabaseref.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String value = snapshot.getValue(String.class);
+                            Toast.makeText(RegistrationSetSecurityQuestions.this, "Value is: "+value, Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });*/
+
+                    /*
+                    rootDatabaseref.child(fAuth.getUid()).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
                         @Override
                         public void onSuccess(Object o) {
                             Toast.makeText(RegistrationSetSecurityQuestions.this, "Database updated", Toast.LENGTH_SHORT).show();
 
                         }
-                    });
+                    });*/
+
                 }
             }
         });

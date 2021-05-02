@@ -156,7 +156,11 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(RegistrationPage.this, "Successfully Created User", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), RegistrationSetSecurityQuestions.class));
+                                Intent myIntent = new Intent(getApplicationContext(),RegistrationSetSecurityQuestions.class);
+                                myIntent.putExtra("Email",email);
+
+                                startActivity(myIntent);
+
                                 finish();
 
                                 //Updating Database fields

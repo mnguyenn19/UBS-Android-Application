@@ -119,8 +119,8 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
                         return;
                     }
 
-                    if (username.length() < 8) {
-                        RegisCreateUserID.setError("Username Must be at Least 8 Characters");
+                    if (username.length() < 6) {
+                        RegisCreateUserID.setError("Username Must be at Least 6 Characters");
                         b = true;
                         return;
                     }
@@ -132,8 +132,8 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
                         return;
                     }
 
-                    if (password.length() < 8) {
-                        RegisCreatePassword.setError("Password Must be at Least 8 Characters");
+                    if (password.length() < 6) {
+                        RegisCreatePassword.setError("Password Must be at Least 6 Characters");
                         b = true;
                         return;
                     }
@@ -167,7 +167,7 @@ public class RegistrationPage extends AppCompatActivity implements AdapterView.O
                                 HashMap hashMap = new HashMap();
                                 hashMap.put("regFirstName", fullName);
                                 hashMap.put("username", username);
-                                hashMap.put("password", password);
+                                // hashMap.put("password", password);
                                 hashMap.put("email", email);
                                 hashMap.put("university",university);
 

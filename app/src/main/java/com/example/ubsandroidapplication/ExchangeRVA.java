@@ -59,9 +59,9 @@ public class ExchangeRVA extends FragmentPagerAdapter {
 }
 
 
-/*
+
 //public class ExchangeRVA extends RecyclerView.Adapter<ExchangeRVA.rva_ExchangeVH> {
-public class ExchangeRVA extends FirebaseRecyclerAdapter<ExchangeRVA.rva_ExchangeVH> {
+/*public class ExchangeRVA extends FirebaseRecyclerAdapter<ExchangeRVA.rva_ExchangeVH> {
     Context rvaContext;
     List<Database> rvaInfo;
     Dialog box;

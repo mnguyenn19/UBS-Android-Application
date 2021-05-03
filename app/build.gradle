@@ -49,8 +49,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     compileOnly 'com.google.android.wearable:wearable:2.6.0'
 
-    //implementation platform('com.google.firebase:firebase-bom:26.2.0')
-    //implementation 'com.google.firebase:firebase-analytics'
+    implementation platform('com.google.firebase:firebase-bom:27.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
     //implementation 'com.google.firebase:firebase-database:19.6.0'
 
     /** used to fix error */

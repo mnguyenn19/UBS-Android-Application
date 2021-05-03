@@ -20,13 +20,14 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="60dp"
         android:text="Title"
+        android:textColor="@color/exchangeBlue"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/exchangeUserTitle"
-        android:layout_width="281dp"
+        android:layout_width="266dp"
         android:layout_height="42dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="48dp"
@@ -35,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/exchangeCreateDescription"
@@ -44,6 +45,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="160dp"
         android:text="Announcement Description"
+        android:textColor="@color/exchangeBlue"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -68,6 +70,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="280dp"
         android:text="University Name"
+        android:textColor="@color/exchangeBlue"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -92,6 +95,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="400dp"
         android:text="Username"
+        android:textColor="@color/exchangeBlue"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -129,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginStart="145dp"
+        android:layout_marginStart="124dp"
         android:layout_marginBottom="80dp"
         android:text="Cancel"
         app:layout_constraintBottom_toBottomOf="parent"

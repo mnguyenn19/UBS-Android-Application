@@ -37,13 +37,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position){
             case 0:
-                fragment = new ExchangeCreateFrag();
+                //fragment = new ExchangeCreateFrag();
                 break;
             case 1:
-                fragment = new ExchangeHomeFrag();
+                //fragment = new ExchangeHomeFrag();
                 break;
             case 2:
-                fragment = new ExchangeEditFrag();
+                //fragment = new ExchangeEditFrag();
                 break;
         }
         return fragment;

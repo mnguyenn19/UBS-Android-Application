@@ -1,6 +1,10 @@
 package com.example.ubsandroidapplication;
 
+import com.google.firebase.database.Exclude;
+
 public class Database {
+
+    private String key;
     //Clubs
     private String clubUsername;
     private String clubFirstName;
@@ -121,6 +125,15 @@ public class Database {
         this.itemCategory = itemCategory;
         this.itemPrice = itemPrice;
         this.keyword = keyword;
+    }
+
+    @Exclude
+    public String getKey() {
+        return key;
+    }
+    @Exclude
+    public void setKey(String dbkey) {
+        key = dbkey;
     }
 
     //Clubs

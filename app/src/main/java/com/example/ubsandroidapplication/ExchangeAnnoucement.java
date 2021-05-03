@@ -43,9 +43,9 @@ public class ExchangeAnnoucement extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(viewPager);
         ExchangeRVA excAdapter = new ExchangeRVA(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        excAdapter.addFrag(new ExchangeCreateFrag(), "Create Post");
-        excAdapter.addFrag(new ExchangeHomeFrag(), "Home");
-        excAdapter.addFrag(new ExchangeEditFrag(), "Edit Post");
+        //excAdapter.addFrag(new ExchangeCreateFrag(), "Create Post");
+        //excAdapter.addFrag(new ExchangeHomeFrag(), "Home");
+        //excAdapter.addFrag(new ExchangeEditFrag(), "Edit Post");
         viewPager.setAdapter(excAdapter);
         viewPager.setCurrentItem(1, false);
 

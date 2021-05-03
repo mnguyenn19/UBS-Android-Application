@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +35,62 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+public class ExchangeHomeFrag extends AppCompatActivity  implements AdapterView.OnItemSelectedListener {
+    private View view;
+
+    private Button excBackBtn, excCreateBtn, excEditBtn;
+    private DatabaseReference dRef;
+    private FirebaseAuth m;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.exchange_home_frag);
+
+        // Button
+        excCreateBtn = findViewById(R.id.createButton);
+        excEditBtn = findViewById(R.id.editButton);
+        excBackBtn = findViewById(R.id.homePageBtn);
+
+        excCreateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ExchangeHomeFrag.this,ExchangeCreateFrag.class);
+                startActivity(intent);
+            }
+        });
+
+        excEditBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ExchangeHomeFrag.this,ExchangeEditFrag.class);
+                startActivity(intent);
+            }
+        });
+
+        excBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ExchangeHomeFrag.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+}
+/*
 public class ExchangeHomeFrag extends Fragment {
     private View view;
 
@@ -61,15 +119,15 @@ public class ExchangeHomeFrag extends Fragment {
 
         exchangeAuth = FirebaseAuth.getInstance();
         userID = exchangeAuth.getCurrentUser().getUid();
-        AnnouncementRef = FirebaseDatabase.getInstance().getReference().child("Database").child("User").child("Exchange").child(userID);
+        AnnouncementRef = FirebaseDatabase.getInstance().getReference().child("Database").child("User").child("Exchange");
         UsersRef = FirebaseDatabase.getInstance().getReference().child("Database").child("User").child("Exchange");
 
         excBackBtn = (Button) view.findViewById(R.id.homePageBtn);
-        //viewPager = (ViewPager) getActivity().findViewById(R.id.exchangePgFrag);
 
         excBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(getContext(),MainActivity.class);
                 startActivity(intent);
             }
@@ -138,7 +196,7 @@ public class ExchangeHomeFrag extends Fragment {
 
 
                 //final ExchangeRVA.rva_ExchangeVH vH = new ExchangeRVA.rva_ExchangeVH(view);
-
+*/
                 /*Dialog box;
                 List<Database> rvaInfo;
                 Context rvaContext;
@@ -146,10 +204,12 @@ public class ExchangeHomeFrag extends Fragment {
                 box.setContentView(R.layout.exchange_view_post_box);
                 box.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));    //makes the box behind transparent
                 */
-
+/*
                 viewHolder.postSingleItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+ */
                         /*
                         TextView boxPostName = (TextView) box.findViewById(R.id.boxTitle);
                         TextView boxPostDescription = (TextView) box.findViewById(R.id.boxDescription);
@@ -163,7 +223,7 @@ public class ExchangeHomeFrag extends Fragment {
                         Toast.makeText(rvaContext,"Test Click" + String.valueOf(viewHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
                         box.show();
                         */
-                    }
+/*                    }
                 });
                 return viewHolder;
             }
@@ -195,3 +255,4 @@ public class ExchangeHomeFrag extends Fragment {
 
     }
 }
+*/

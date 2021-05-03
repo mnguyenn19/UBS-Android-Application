@@ -159,38 +159,9 @@ public class RegistrationSetSecurityQuestions extends AppCompatActivity implemen
                             }
                         }
                     });
-
-
-
-
-                   /* rootDatabaseref.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            String value = snapshot.getValue(String.class);
-                            Toast.makeText(RegistrationSetSecurityQuestions.this, "Value is: "+value, Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });*/
-
-                    /*
-                    rootDatabaseref.child(fAuth.getUid()).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
-                        @Override
-                        public void onSuccess(Object o) {
-                            Toast.makeText(RegistrationSetSecurityQuestions.this, "Database updated", Toast.LENGTH_SHORT).show();
-
-                        }
-                    });*/
-
                 }
             }
         });
-
-
-
     }
 
 

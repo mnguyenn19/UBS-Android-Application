@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         moveExchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ExchangeAnnoucement.class);
+                Intent intent = new Intent(getApplicationContext(),ExchangeHomeFrag.class);
                 startActivity(intent);
                 finish();
             }

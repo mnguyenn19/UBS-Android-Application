@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UBSAndroidApplication">
-        <activity android:name=".ClubsCreateClub"></activity>
+        <activity android:name=".ClubsFindClubs"></activity>
+        <activity android:name=".ClubsCreateClub" />
         <activity
             android:name=".exchangeTab"
             android:theme="@style/Theme.UBSAndroidApplication.NoActionBar" />

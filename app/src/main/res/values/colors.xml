@@ -12,5 +12,7 @@
     <color name="exchangeBlue">#03A9F4</color>
     <color name="exchangeGray">#FF0000</color>
     <color name="exchangeBgdFg">#0D8EFF</color>
+    <color name="ubsButton">#FF68C59D</color>
+
 
 </resources>

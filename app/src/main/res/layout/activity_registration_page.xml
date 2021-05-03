@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
 
             android:text="UBS Registration"
+            android:textColor="@color/exchangeBlue"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
 
             android:layout_marginTop="45dp"
+            android:textColor="@color/exchangeBlue"
 
             android:layout_marginRight="13dp"
             android:layout_marginBottom="5dp"
@@ -77,6 +79,7 @@
             android:id="@+id/RegisEmailTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/exchangeBlue"
 
 
             android:layout_marginTop="40dp"
@@ -118,6 +121,7 @@
             android:id="@+id/RegisUniversityTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/exchangeBlue"
 
 
             android:layout_marginTop="35dp"
@@ -161,6 +165,7 @@
 
             android:text="Create UserID:"
             android:textStyle="bold"
+            android:textColor="@color/exchangeBlue"
 
 
             android:layout_marginTop="0dp"
@@ -204,6 +209,7 @@
 
             android:text="Create Password"
             android:textStyle="bold"
+            android:textColor="@color/exchangeBlue"
 
             android:layout_marginTop="25dp"
             android:layout_marginRight="0dp"

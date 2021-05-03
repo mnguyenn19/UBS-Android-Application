@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
 
         android:text="University Bazzar System"
+        android:textColor="@color/exchangeBlue"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -40,6 +41,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="70dp"
+        android:textColor="@color/exchangeBlue"
         android:text="Email"
 
 
@@ -71,6 +73,7 @@
         android:id="@+id/LoginPassTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/exchangeBlue"
 
         android:layout_marginBottom="20dp"
         android:text="Password"

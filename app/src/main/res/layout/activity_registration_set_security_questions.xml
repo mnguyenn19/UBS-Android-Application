@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
 
         android:text="Set Security Questions"
+        android:textColor="@color/exchangeBlue"
         android:textSize="20sp"
         android:textStyle="bold"
 

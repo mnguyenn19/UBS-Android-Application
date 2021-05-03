@@ -112,6 +112,7 @@ public class LoginPage extends AppCompatActivity {
                                 if (!task.getResult().getSignInMethods().isEmpty()) {
                                     Toast.makeText(LoginPage.this, "User found", Toast.LENGTH_SHORT).show();
 
+
                                     Intent myIntent = new Intent(getApplicationContext(),LoginForgotPassword.class);
                                     myIntent.putExtra("myExtra",user);
 

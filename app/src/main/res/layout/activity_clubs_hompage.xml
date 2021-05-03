@@ -8,60 +8,47 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context=".ClubViewYourClubs">
-
+    tools:context=".ClubsHomepage">
 
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:background="@color/ubsblue">
-        <ImageView
-            android:id="@+id/backArrow"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
-            android:src="@drawable/ic_baseline_arrow_back_24" />
+        android:background="@color/white"
+
+        >
         <TextView
-            android:id="@+id/YourClubsTitle"
+            android:id="@+id/ClubsTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-
             android:background="@color/ubsblue"
             android:gravity="center"
-            android:layout_marginRight="20dp"
 
-            android:text="View Your Clubs"
+            android:text="Clubs Homepage"
 
             android:textColor="@android:color/white"
 
             android:textSize="20sp"
             android:textStyle="bold"
 
+
             app:layout_constraintBottom_toTopOf="@id/YourClubsRecyclerView"
 
             app:layout_constraintVertical_chainStyle="packed"
 
             />
+
+
     </TableRow>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/YourClubsRecyclerView"
-
-        android:layout_width="match_parent"
-        android:layout_height="475dp"
-
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
 
     <TableRow
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        >
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center">
+
         <Button
             android:id="@+id/CreateClubButton"
             android:layout_width="150dp"
@@ -80,8 +67,48 @@
             android:layout_gravity="right"
 
             android:text="Find Club"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintBottom_toBottomOf="parent" />
+
     </TableRow>
+
+  <TableRow
+      android:background="@color/ubsblue"
+      android:layout_width="match_parent"
+      android:layout_gravity="center"
+      android:layout_height="50dp">
+
+    <TextView
+        android:id="@+id/YourClubsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+
+        android:background="@color/ubsblue"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+
+        android:text="View Your Clubs"
+
+        android:textColor="@android:color/white"
+
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+
+        app:layout_constraintBottom_toTopOf="@id/YourClubsRecyclerView"
+
+        app:layout_constraintVertical_chainStyle="packed"
+        />
+  </TableRow>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/YourClubsRecyclerView"
+
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
 
 </LinearLayout>

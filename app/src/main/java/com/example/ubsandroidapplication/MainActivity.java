@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         moveClubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ClubViewYourClubs.class);
+                Intent intent = new Intent(getApplicationContext(), ClubsHomepage.class);
                 startActivity(intent);
             }
         });

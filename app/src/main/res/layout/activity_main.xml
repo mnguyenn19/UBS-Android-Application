@@ -1,95 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/exchangeBgdFg"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="252dp"
-        android:layout_height="46dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
         android:textSize="30dp"
         android:text="Welcome to UBS!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        android:textColor="@color/white"
+        />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/exchangeButton"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="30dp"
+            android:text="Exchange"
+            />
+
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:text="Search"
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/salesButton"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="30dp"
+            android:text="Sales"
+            />
+
+        <Button
+            android:id="@+id/clubsButton"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:text="Clubs"
+            />
+
+    </TableRow>
+
+
+    <Button
+        android:id="@+id/commButton"
+        android:layout_marginTop="25dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:text="Communication"
+        />
 
     <Button
         android:id="@+id/LogoutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="250dp"
         android:onClick="logoutBtn"
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
 
-    <Button
-        android:id="@+id/searchButton"
-        android:layout_width="157dp"
-        android:layout_height="122dp"
-        android:text="Search"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.901"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.267" />
+        android:text="Logout" />
 
-    <Button
-        android:id="@+id/salesButton"
-        android:layout_width="164dp"
-        android:layout_height="127dp"
-        android:text="Sales"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
-
-    <Button
-        android:id="@+id/exchangeButton"
-        android:layout_width="168dp"
-        android:layout_height="119dp"
-        android:text="Exchange"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
-
-    <Button
-        android:id="@+id/clubsButton"
-        android:layout_width="149dp"
-        android:layout_height="127dp"
-        android:text="Clubs"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
-
-    <Button
-        android:id="@+id/commButton"
-        android:layout_width="240dp"
-        android:layout_height="115dp"
-        android:text="Communication"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.826" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

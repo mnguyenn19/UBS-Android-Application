@@ -3,6 +3,7 @@ package com.example.ubsandroidapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,6 +73,7 @@ public class ExchangeCreateFrag extends AppCompatActivity implements AdapterView
                 String desc = excUserDescription.getText().toString().trim();
                 String uni = excUserUni.getText().toString().trim();
                 String username = excUserUsername.getText().toString().trim();
+
 
                 Intent intent = new Intent(getApplicationContext(),ExchangeHomeFrag.class);
                 startActivity(intent);

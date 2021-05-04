@@ -1,14 +1,12 @@
 package com.example.ubsandroidapplication;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Search extends AppCompatActivity {
+public class SearchClubs extends AppCompatActivity {
 
     DatabaseReference firebaseReference;
     EditText searchEditText;
@@ -41,11 +38,10 @@ public class Search extends AppCompatActivity {
     ArrayList<String> excDescList;
     ArrayList<String> excUniList;
     searchAdapter sAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_search_clubs);
 
         searchEditText = (EditText) findViewById(R.id.searchPage);
         firebaseReference = FirebaseDatabase.getInstance().getReference();// ("ubs-android-application-t11-default-rtdb").child("User").child("Exchange");//.child("ubs-android-application-t11-default-rtdb").child("User").child("Exchange");
@@ -95,7 +91,7 @@ public class Search extends AppCompatActivity {
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Search.this, SearchChoice.class);
+                Intent intent = new Intent(SearchClubs.this, SearchChoice.class);
                 startActivity(intent);
                 finish();
             }
@@ -104,7 +100,7 @@ public class Search extends AppCompatActivity {
         settingsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Search.this, "Menu Options", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SearchClubs.this, "Menu Options", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -155,7 +151,7 @@ public class Search extends AppCompatActivity {
                 //LinearLayoutManager manager = new LinearLayoutManager(this);
                 //recyclerView.setLayoutManager(manager);
                 //recyclerView.setHasFixedSize(true);
-                sAdapter = new searchAdapter(Search.this, excTitleList, excDescList, excUniList);
+                sAdapter = new searchAdapter(SearchClubs.this, excTitleList, excDescList, excUniList);
                 recyclerView.setAdapter(sAdapter);
             }
 

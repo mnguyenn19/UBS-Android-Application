@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/exchangeBgdFg"
+    android:background="@drawable/ubsbg"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
 
@@ -18,7 +18,10 @@
         android:gravity="center"
         android:layout_marginTop="30dp"
         android:textSize="30dp"
+
+
         android:text="Welcome to UBS!"
+
         android:textColor="@color/white"
         />
 

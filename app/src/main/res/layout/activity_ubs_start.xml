@@ -10,7 +10,7 @@
     android:orientation="vertical"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
-    android:background="@color/white"
+    android:background="@drawable/ubsbg"
 
 
     tools:context=".UbsStart">
@@ -23,11 +23,10 @@
 
         android:layout_marginTop="155dp"
         android:text="University Bazzar System"
-        android:textColor="@color/exchangeBlue"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textSize="25sp"
 
-        android:textStyle="bold"
 
         app:layout_constraintEnd_toEndOf="parent"
 

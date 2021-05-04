@@ -66,7 +66,7 @@ public class ExchangeHomeFrag extends AppCompatActivity  implements AdapterView.
         recyclerVieww.setAdapter(adapter);
 
         // there is an error right here
-        /*root.addValueEventListener(new ValueEventListener() {
+        root.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
@@ -79,7 +79,7 @@ public class ExchangeHomeFrag extends AppCompatActivity  implements AdapterView.
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });*/
+        });
 
         excCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override

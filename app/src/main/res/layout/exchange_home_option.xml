@@ -1,50 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/postSingleAnnouncement"
-    android:padding="30dp"
-    android:layout_marginTop="10dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="10dp"
+    android:padding="10dp"
+    android:layout_height="170dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="16dp">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/exchangePostTitle"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Title"
-            android:paddingBottom="10dp"
-            android:textColor="@color/black"/>
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
 
-        <TextView
-            android:id="@+id/exchangeDescription"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/excHeaderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title: "
+                android:textColor="@color/ubstext"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/exchangePostTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Title goes here"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Description here"
-            android:paddingBottom="10dp"
-            android:textColor="@color/black"/>
+            android:layout_marginLeft="20dp">
 
-        <TextView
-            android:id="@+id/exchangeUni"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/excHeaderDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description: "
+                android:textColor="@color/ubstext"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/exchangeDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Description here"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.051"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.363" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="University here"
-            android:textColor="@color/black"/>
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/exchangeUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Username here"
+                android:gravity="end"
+                android:textColor="@color/black"
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="128dp" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/exchangeUsername"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username here"
-            android:textColor="@color/black"/>
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp">
 
+            <TextView
+                android:id="@+id/exchangeUni"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="University here"
+                android:gravity="end"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.629" />
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

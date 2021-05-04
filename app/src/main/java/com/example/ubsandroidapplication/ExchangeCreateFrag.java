@@ -84,8 +84,6 @@ public class ExchangeCreateFrag extends AppCompatActivity implements AdapterView
                 hashMap.put("excUniversity", uni);
                 hashMap.put("excUsername", username);
 
-
-
                 firebaseRef.child(fAuth.getUid()).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
                     @Override
                     public void onSuccess(Object o) {

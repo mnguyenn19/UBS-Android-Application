@@ -50,14 +50,15 @@
         <activity
             android:name=".ExchangeCreateFrag"
             android:label="Exchange Create Page" />
-        <!--
-        <activity
-            android:name=".SearchChoice"
-            android:label="Search Home page" />
+
         <activity
             android:name=".Search"
             android:label="Search Exchange"
             android:theme="@style/AppTheme.NoActionBar" />
+        <!--
+        <activity
+            android:name=".SearchChoice"
+            android:label="Search Home page" />
         <activity
             android:name=".SearchClubs"
             android:label="Search Clubs"

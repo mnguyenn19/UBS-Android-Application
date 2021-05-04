@@ -41,6 +41,11 @@ public class ExchangeHomeFrag extends AppCompatActivity  implements AdapterView.
     private Button excBackBtn, excCreateBtn, excEditBtn;
     private DatabaseReference dRef;
     private FirebaseAuth m;
+    private RecyclerView recyclerVieww;
+    private FirebaseDatabase db = FirebaseDatabase.getInstance();
+    private DatabaseReference root = db.getReference().child("Database").child("User").child("Exchange");
+    private excModelAdapter adapter;
+    private ArrayList<excModel> list;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,6 +56,30 @@ public class ExchangeHomeFrag extends AppCompatActivity  implements AdapterView.
         excCreateBtn = findViewById(R.id.createButton);
         excEditBtn = findViewById(R.id.editButton);
         excBackBtn = findViewById(R.id.homePageBtn);
+        recyclerVieww = findViewById(R.id.home_recycler_viewer);
+        recyclerVieww.setHasFixedSize(true);
+        recyclerVieww.setLayoutManager(new LinearLayoutManager(this));
+
+        list = new ArrayList<>();
+        adapter = new excModelAdapter(this, list);
+
+        recyclerVieww.setAdapter(adapter);
+
+        // there is an error right here
+        /*root.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    excModel model = dataSnapshot.getValue(excModel.class);
+                    list.add(model);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });*/
 
         excCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override

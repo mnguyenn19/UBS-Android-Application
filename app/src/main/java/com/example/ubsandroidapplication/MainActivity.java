@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button moveCommunication;
     Button moveClubs;
 
+
     //Firebase Database
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         moveSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),SearchChoice.class);
+                Intent intent = new Intent(getApplicationContext(),Search.class);
                 startActivity(intent);
                 finish();
             }

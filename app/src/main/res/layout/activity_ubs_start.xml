@@ -10,6 +10,7 @@
     android:orientation="vertical"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
+    android:background="@color/white"
 
 
     tools:context=".UbsStart">
@@ -24,7 +25,7 @@
         android:text="University Bazzar System"
         android:textColor="@color/exchangeBlue"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="25sp"
 
         android:textStyle="bold"
 
@@ -41,11 +42,11 @@
         android:layout_height="75dp"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
-        android:textColor="@color/white"
-
-
         android:background="#673AB7"
+
+
         android:text="Login"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/StartRegisterButton"
 
         app:layout_constraintHorizontal_bias="0.582"

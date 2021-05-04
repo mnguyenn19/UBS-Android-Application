@@ -19,7 +19,7 @@
 
         >
         <TextView
-            android:id="@+id/ClubsTitle"
+            android:id="@+id/AllClubsTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/ubsblue"
@@ -35,7 +35,7 @@
 
             app:layout_constraintBottom_toTopOf="@id/YourClubsRecyclerView"
 
-            app:layout_constraintVertical_chainStyle="packed"
+
 
             />
 

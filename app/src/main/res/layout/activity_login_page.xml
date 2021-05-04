@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
-
+    android:background="@drawable/ubs2"
 
     tools:context=".LoginPage">
 
@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
 
         android:text="University Bazzar System"
+        android:textColor="@color/ubstext"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -40,6 +41,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="70dp"
+        android:textColor="@color/ubstext"
         android:text="Email"
 
 
@@ -71,6 +73,7 @@
         android:id="@+id/LoginPassTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/ubstext"
 
         android:layout_marginBottom="20dp"
         android:text="Password"

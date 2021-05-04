@@ -64,7 +64,7 @@ public class LoginForgotPassword extends AppCompatActivity {
         // System.out.println("Successfully fetched user data: " + userRecord.getEmail());
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Database");
-        DatabaseReference uidRef = rootRef.child("User").child("Registration").child("cPYQdWSvYST9YZYH1Ebn3QxBTXD2");
+        DatabaseReference uidRef = rootRef.child("User").child("Registration").child("OwjDifDimvTtu4GMp2duAJjHhMF3");
 
 
         uidRef.addListenerForSingleValueEvent(new ValueEventListener() {

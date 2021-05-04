@@ -31,5 +31,14 @@ public class ClubsHomepage extends AppCompatActivity {
                 finish();
             }
         });
+
+        FindClubBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent findClub = new Intent(ClubsHomepage.this,ClubsFindClubs.class);
+                startActivity(findClub);
+
+            }
+        });
     }
 }

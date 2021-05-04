@@ -12,8 +12,8 @@
     <color name="exchangeBlue">#03A9F4</color>
     <color name="exchangeGray">#FF0000</color>
     <color name="exchangeBgdFg">#0D8EFF</color>
-    <color name="colorprimary">#607D88</color>
-    <color name="colorprimarydark">#455A64</color>
-    <color name="colorAccent">#4CAF50</color>
-    <color name="cast_expanded_controller_text_color" />
+    <color name="ubstext">#0e3757</color>
+
+
+
 </resources>

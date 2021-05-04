@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+
     android:orientation="vertical"
-
     android:paddingLeft="30dp"
-    android:paddingRight="30dp"
 
-    tools:context=".ClubsHomepage">
+    android:paddingRight="30dp"
+    tools:context=".ClubsHomepage"
+    android:background="@drawable/ubs2">
 
 
     <TextView
@@ -23,7 +24,7 @@
         android:gravity="center_vertical"
 
         android:text="Create a Club"
-        android:textColor="@color/exchangeBlue"
+        android:textColor="@color/ubstext"
         android:textSize="20sp"
         android:textStyle="bold"
 
@@ -44,7 +45,7 @@
             android:layout_marginRight="25dp"
             android:text="Club Name:"
 
-            android:textColor="@color/exchangeBlue"
+            android:textColor="@color/ubstext"
             android:textStyle="bold" />
 
         <EditText
@@ -62,29 +63,27 @@
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        >
+        android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/ClubLeaderTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textColor="@color/exchangeBlue"
-
             android:text="Leader Name:"
-            android:textStyle="bold"
-            />
+
+            android:textColor="@color/ubstext"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/ClubLeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:textSize="15sp"
-
-
             android:hint="Enter Club Name"
+
+
+            android:textSize="15sp"
 
             app:layout_constraintVertical_chainStyle="packed" />
     </TableRow>
@@ -105,7 +104,7 @@
 
             android:text="University:"
 
-            android:textColor="@color/exchangeBlue"
+            android:textColor="@color/ubstext"
             android:textStyle="bold" />
 
         <Spinner
@@ -120,30 +119,28 @@
     </TableRow>
 
 
-
     <TextView
         android:id="@+id/ClubDescriptionTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:textColor="@color/exchangeBlue"
         android:layout_marginTop="15dp"
-
         android:text="Club Description:"
-        android:textStyle="bold"
-        />
+
+        android:textColor="@color/ubstext"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/ClubDescriptionBox"
         android:layout_width="match_parent"
         android:layout_height="185dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
-        android:background="@color/ubsblue"
-        android:gravity="top|left"
 
+        android:gravity="top|left"
         android:hint="Enter Club Description Here..."
+
         android:inputType="textMultiLine"
+        android:textSize="15sp"
 
 
         />
@@ -172,6 +169,7 @@
 
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+
 
             android:text="Cancel" />
 

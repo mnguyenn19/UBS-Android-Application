@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/ubs2"
+
+    tools:context=".ClubsFindClubs">
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@color/ubstext"
+
+        >
+        <TextView
+            android:id="@+id/AllClubsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/ubsblue"
+            android:gravity="center"
+
+            android:text="All Clubs"
+
+            android:textColor="@android:color/white"
+
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+
+            app:layout_constraintBottom_toTopOf="@id/YourClubsRecyclerView"
+
+
+
+            />
+
+
+    </TableRow>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/YourClubsRecyclerView"
+
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+</LinearLayout>

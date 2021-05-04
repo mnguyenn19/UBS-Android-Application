@@ -10,14 +10,14 @@ android:paddingRight="@dimen/activity_horizontal_margin"
 android:paddingTop="@dimen/activity_vertical_margin"
 android:layout_marginTop="70dp"
 tools:context=".CommunicationView"
-android:background="@color/exchangeWhite">
+android:background="@drawable/ubs2">
 
 <TextView
     android:text="Recipient: "
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/textView4"
-    android:textColor="@color/exchangeBlue"
+    android:textColor="@color/ubstext"
     android:layout_marginTop="71dp"
     android:textSize="18sp"
     android:layout_alignParentTop="true"
@@ -32,13 +32,12 @@ android:background="@color/exchangeWhite">
     android:id="@+id/editText5"
     android:layout_marginLeft="43dp"
     android:layout_marginStart="43dp"
-    android:background="@color/exchangeWhite"
-    android:textColor="@color/exchangeBlue"
+    android:textColor="@color/ubstext"
     android:hint="email/username"
     android:layout_alignBottom="@+id/textView4"
     android:layout_toRightOf="@+id/textView4"
     android:layout_toEndOf="@+id/textView4"
-    android:textColorHint="@color/exchangeBlue"
+    android:textColorHint="@color/ubstext"
     android:fontFamily="serif"
     android:textSize="14sp" />
 
@@ -52,7 +51,7 @@ android:background="@color/exchangeWhite">
         android:layout_alignStart="@+id/textView32"
         android:layout_marginTop="19dp"
         android:textSize="18sp"
-        android:textColor="@color/exchangeBlue" />
+        android:textColor="@color/ubstext" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -65,9 +64,8 @@ android:background="@color/exchangeWhite">
         android:layout_alignBaseline="@+id/textView34"
         android:layout_alignBottom="@+id/textView34"
         android:layout_alignStart="@+id/editText5"
-        android:textColorHint="@color/exchangeBlue"
+        android:textColorHint="@color/ubstext"
         android:textColor="?attr/colorAccent"
-        android:background="@color/exchangeWhite"
         android:fontFamily="serif" />
 
     <Button
@@ -88,12 +86,11 @@ android:background="@color/exchangeWhite">
     android:inputType="textMultiLine"
     android:ems="10"
     android:id="@+id/editText3"
-    android:background="@color/exchangeBlue"
     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
     android:textSize="18sp"
     android:textColor="@android:color/background_light"
 
-    android:textColorHint="@color/common_google_signin_btn_text_dark_default"
+    android:textColorHint="@color/ubstext"
     android:layout_height="170sp"
     android:gravity="top"
     android:layout_centerVertical="true"
@@ -101,6 +98,6 @@ android:background="@color/exchangeWhite">
     android:hint="Write your message here: "
     android:fontFamily="serif"
     android:textColorLink="@android:color/white"
-    android:textCursorDrawable="@color/cast_expanded_controller_text_color" />
+    android:textCursorDrawable="@color/exchangeBlue" />
 
 </RelativeLayout>

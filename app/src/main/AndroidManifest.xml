@@ -55,6 +55,7 @@
             android:name=".Search"
             android:label="Search Exchange"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <!--
         <activity
             android:name=".SearchChoice"

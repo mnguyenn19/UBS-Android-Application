@@ -62,13 +62,23 @@ public class MainActivity extends AppCompatActivity {
 
         moveClubs = findViewById(R.id.clubsButton);
         moveClubs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ClubsHomepage.class);
-                startActivity(intent);
-            }
+             @Override
+             public void onClick(View v) {
+                 Intent intent = new Intent(getApplicationContext(), ClubsHomepage.class);
+                 startActivity(intent);
+             }
+        });
 
-        /*
+        /*moveCommunication = findViewById(R.id.commButton);
+        moveCommunication.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(),CommunicationView.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+
         moveSales = findViewById(R.id.salesButton);
         moveSales.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,15 +89,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        moveCommunication = findViewById(R.id.commButton);
-        moveCommunication.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),CommunicationView.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
     }
 

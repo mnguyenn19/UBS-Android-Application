@@ -33,7 +33,7 @@ public class Database {
     private String resetSA2;
     private String resetSA3;
 
-    //Payment
+    //Payment aditya
     private String payUsername; // must check this with username
     private String payFirstName;
     private String payLastName;
@@ -60,7 +60,7 @@ public class Database {
     private String sa2;
     private String sa3;
 
-    //Sales
+    //Sales aditya
     private String salesUsername;   // must check this with username
     private String itemName;
     private String itemDescription;

@@ -23,6 +23,9 @@
     <string name="exchange_tab_create">Create Post</string>
     <string name="exchange_tab_home">Home</string>
     <string name="exchange_tab_edit">Edit Post</string>
+    <string name="label_buy_now" />
+    <string name="label_Cancel" />
+    <string name="label_Buy_Now">Buy Now</string>
 
 
     <string-array name="Universities">

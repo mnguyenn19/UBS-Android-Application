@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ClubsHomepage.class);
                 startActivity(intent);
             }
-        });
 
         /*
         moveSales = findViewById(R.id.salesButton);
@@ -77,18 +76,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        });
+        });*/
 
         moveCommunication = findViewById(R.id.commButton);
         moveCommunication.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),CommFileName.class);
-                //Intent intent = new Intent(MainActivity.this,CommFileName.class);
+                Intent intent = new Intent(getApplicationContext(),CommunicationView.class);
                 startActivity(intent);
                 finish();
             }
-        });*/
+        });
 
     }
 

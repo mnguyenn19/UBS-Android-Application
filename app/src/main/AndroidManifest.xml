@@ -14,13 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UBSAndroidApplication">
+        <activity android:name=".ClubsCreateClub"></activity>
 
-
-        <activity android:name=".ClubsCreateClub"
-            android:label="UBS Clubs">
-        </activity>
-        <activity android:name=".ClubsFindClubs"
-            android:label="UBS Clubs"></activity>
         <activity
             android:name=".ClubsHomepage"
             android:label="UBS Clubs" />
@@ -43,9 +38,11 @@
         <activity
             android:name=".LoginResetSecurityQuestions"
             android:label="UBS Forgot Password" />
+
+
         <activity
-            android:name=".ExchangeHomeFrag"
-            android:label="Exchange Home Page" />
+        android:name=".ExchangeHomeFrag"
+        android:label="Exchange Home Page" />
         <activity
             android:name=".ExchangeEditFrag"
             android:label="Exchange Edit Page" />
@@ -54,21 +51,9 @@
             android:label="Exchange Create Page" />
 
         <activity
-            android:name=".SearchChoice"
-            android:label="Search Home page" />
-        <activity
             android:name=".Search"
-            android:label="Search Exchange"
+            android:label="Search"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SearchClubs"
-            android:label="Search Clubs"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SearchSales"
-            android:label="SearchSales "
-            android:theme="@style/AppTheme.NoActionBar" />
-
         <!--
                 <uses-library
                     android:name="com.google.android.wearable"

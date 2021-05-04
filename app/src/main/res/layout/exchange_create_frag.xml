@@ -28,9 +28,9 @@
     <EditText
         android:id="@+id/exchangeUserTitle"
         android:layout_width="266dp"
-        android:layout_height="40dp"
+        android:layout_height="42dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="30dp"
         android:hint="Enter announcement title"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,23 +43,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="160dp"
         android:text="Announcement Description"
         android:textColor="@color/ubstext"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/exchangeUserDescription"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="30dp"
         android:hint="Enter post's description"
-        android:inputType="textMultiLine"
-        android:gravity="top|left"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.343"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,31 +68,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="280dp"
         android:text="University Name"
         android:textColor="@color/ubstext"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/exchangeUserUniversity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="300dp"
         android:layout_marginEnd="30dp"
         android:hint="Enter university name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/exchangeCreateUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="430dp"
+        android:layout_marginTop="400dp"
         android:text="Username"
         android:textColor="@color/ubstext"
         android:textStyle="bold"
@@ -106,7 +105,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="420dp"
         android:layout_marginEnd="30dp"
         android:hint="Enter username"
         app:layout_constraintEnd_toEndOf="parent"

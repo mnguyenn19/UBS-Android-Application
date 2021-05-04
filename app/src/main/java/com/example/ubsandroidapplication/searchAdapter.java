@@ -39,8 +39,6 @@ public class searchAdapter extends RecyclerView.Adapter<searchAdapter.sVH> {
         this.excUniList = excUniList;
     }
 
-
-
     @NonNull
     @Override
     public searchAdapter.sVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

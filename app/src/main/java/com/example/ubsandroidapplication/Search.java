@@ -95,7 +95,7 @@ public class Search extends AppCompatActivity {
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Search.this, SearchChoice.class);
+                Intent intent = new Intent(Search.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -107,7 +107,6 @@ public class Search extends AppCompatActivity {
                 Toast.makeText(Search.this, "Menu Options", Toast.LENGTH_SHORT).show();
             }
         });
-
         appName.setText("UBS");
     }
 
@@ -147,7 +146,6 @@ public class Search extends AppCompatActivity {
                         excUniList.add(eUsername);
                         tracker++;
                     }
-
                     if (tracker == 20)
                         break;
                 }
@@ -163,7 +161,6 @@ public class Search extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-
         });
     }
 }

@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 }
             });
-
-        /*moveSales = findViewById(R.id.salesButton);
+/*
+        moveSales = findViewById(R.id.salesButton);
         moveSales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

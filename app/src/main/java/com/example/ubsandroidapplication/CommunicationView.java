@@ -1,11 +1,8 @@
 package com.example.ubsandroidapplication;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -23,10 +20,11 @@ public class CommunicationView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+       // LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+        setContentView(R.layout.activity_communication_view);
+        //View contentView = inflater.inflate(R.layout.activity_communication_view, null, false);
 
-        View contentView = inflater.inflate(R.layout.activity_communication_view, null, false);
         //ViewGroup drawer;
         // drawer.addView(contentView, 0);
         // fab.setVisibility(View.INVISIBLE);
@@ -38,6 +36,10 @@ public class CommunicationView extends AppCompatActivity {
         buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String email = editTextEmail.getText().toString().trim();
+                String subj = editTextSubject.getText().toString().trim();;
+                String msg = editTextMessage.getText().toString().trim();;
+
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }

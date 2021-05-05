@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
              }
         });
 
-        /*moveCommunication = findViewById(R.id.commButton);
+        moveCommunication = findViewById(R.id.commButton);
         moveCommunication.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-        moveSales = findViewById(R.id.salesButton);
+        /*moveSales = findViewById(R.id.salesButton);
         moveSales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

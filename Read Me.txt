@@ -1,0 +1,63 @@
+READ ME File
+-----------------------------------------------------
+Notes:
+	If needed, to view database information, please contact the phone number to receive permission since the database is currently locked to contributors only.
+
+Contributors:
+	Michelle Nguyen
+	Jackelyn Macias-Brijil
+	Aditya Mishra
+
+Emails:
+	michelle.nguyen61@mavs.uta.edu
+	jackelynmacias81@gmail.com
+	aditya.mishra@mavs.uta.edu
+
+Contact:
+	(817) 901-0217
+
+Partial Working Exceptions:
+
+	General:
+		- All drop down boxes don't have error checking implemented. We are assuming that the user selects from the choices in the spinner.
+
+	Michelle portion:
+		Exchange:
+			- Could not find the child key in firebase database to make delete button erase data in Exchange page.
+			- Could not display posts immediately created in the home page of exchange. Users must use the search to view the posts.
+		Search:
+			- Could not search through sales completely due to sales portion not being complete.
+			- Could not search through clubs completely due to clubs portion not being complete.
+	Jackelyn portion:
+		Login:
+			- Forgot password's security questions from which the user picked in the registration could not be retrieved from the database via Java.
+			  The child key could not be found.
+			- Security answers aren't able to be verified. The password reset will be sent as long as the fields are filled in.
+		Clubs:
+			- User can only create 1 club. If they try to create another club, it will update the existing club the user created.
+			- The user isn't able to see the clubs they have created in the 'View Your Clubs' view and find their own clubs. The list of all the clubs has not been implemented.
+	Aditya portion:
+		Communications:
+			- Cannot send an email to the user's account for communication notifying them a message was sent to them.
+			- Does not block and unblock users.
+			- No settings button available.
+			- Does not delete conversation.
+		Sales:
+			- Is not linked to payment yet.
+			- Has no options to input amount.
+			- Does not upload item or show picture.
+			- Not functional with application.
+		Payment:
+			- Cannot accept card information yet.
+			- The page is not linked into the sales portion.
+			- No instant buy, no add to cart, no taking in user's data for card information.
+			- Not functional with application.
+
+Login:
+	username: jmacias391@gmail.com
+	password: password123
+
+	or
+
+	username: testcase1@gmail.com
+	password: password
